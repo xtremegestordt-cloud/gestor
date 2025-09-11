@@ -1,224 +1,844 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Matheus Xtreme – Gestor de Tráfego | Alta Conversão</title>
-  <meta name="description" content="Gestão de tráfego pago, criação de sites/apps e Google Meu Negócio. Resultado em 60 dias ou devolvemos.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0066cc">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0066cc">
 
-  <!-- Tailwind 4 via CDN (leve 30 kB gzip) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config={
-      theme:{
-        extend:{
-          colors:{
-            primary:'#0066cc',
-            secondary:'#25D366',
-            accent:'#FF6B35'
-          },
-          fontFamily:{
-            sans:['Inter','system-ui','sans-serif'],
-            display:['Montserrat','system-ui','sans-serif']
-          }
+    <title>Matheus Xtreme — Gestor de Tráfego | Google Ads, Meta Ads, Sites & Apps</title>
+    <meta name="description" content="Especialista em Gestão de Tráfego: Aumente suas vendas com campanhas no Google Ads, Meta Ads, Sites de Alta Conversão e Otimização do Google Meu Negócio.">
+    <meta name="keywords" content="gestor de tráfego, meta ads, google ads, criação de sites, google meu negócio, marketing digital, tráfego pago, gestor de tráfego especialista">
+    <meta name="author" content="Matheus Xtreme">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seusite.com">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:title" content="Matheus Xtreme — Gestor de Tráfego Especialista">
+    <meta property="og:description" content="Transforme visitas em clientes: Gestão de Tráfego, Criação de Sites e Apps com Resultados Comprovados.">
+    <meta property="og:image" content="https://i.ibb.co/kgS4m24K/logo.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Xtreme Gestor">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@xtremegestor">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/kgS4m24K/logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/kgS4m24K/logo.jpg">
+
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Otimizado -->
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004d99;
+            --secondary: #25D366;
+            --secondary-dark: #128C7E;
+            --accent: #FF6B35;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
         }
-      }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            padding-top: 80px;
+            line-height: 1.6;
+            background: white;
+        }
+        h1,h2,h3,h4,h5,h6,.navbar-brand { font-family: 'Montserrat', sans-serif; font-weight:700; }
+        .navbar { background: rgba(18,18,18,0.95); padding:15px 0; box-shadow:0 2px 20px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: all 0.3s ease; }
+        .navbar.scrolled { padding:10px 0; }
+        .blinking-text { animation: blink 2s infinite; font-weight:bold; color:var(--secondary) !important; font-size:1.2rem !important; text-shadow:0 0 8px rgba(37,211,102,0.7); }
+        @keyframes blink { 0%{opacity:1}50%{opacity:.7}100%{opacity:1} }
+
+        .btn-custom { display:inline-block; padding:12px 26px; border-radius:50px; font-weight:bold; border:none; transition: all .3s; text-decoration:none; cursor:pointer; position:relative; overflow:hidden; z-index:1; }
+        .btn-whatsapp { background:var(--secondary); color:white; }
+        .btn-primary-custom { background:var(--primary); color:white; }
+        .btn-custom:focus { outline: 2px solid white; outline-offset: 2px; }
+
+        .card-custom { border:none; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition: all .4s; height:100%; overflow:hidden; }
+        .card-custom:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+        .hero { background: var(--gradient); color:white; padding:110px 0 90px; text-align:center; position:relative; overflow:hidden; }
+        .logo { max-width:280px; margin-bottom:20px; transition:all .3s ease; }
+        .logo:hover { transform:scale(1.05); }
+
+        .section-title { font-size:2.6rem; font-weight:800; margin-bottom:2rem; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:inline-block; }
+        .section-title:after { content:''; display:block; height:5px; width:80px; margin:12px auto 0; background:var(--gradient); border-radius:3px; }
+
+        .case-image { border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-bottom:25px; width:100%; height:auto; transition:all .4s ease; }
+        .stats-number { font-size:2.4rem; font-weight:800; color:var(--primary); font-family:'Montserrat', sans-serif; }
+
+        .testimonial { background:white; padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.08); margin:15px 0; position:relative; }
+        .whatsapp-float { position:fixed; bottom:22px; right:22px; background:var(--secondary); color:white; border-radius:50%; width:72px; height:72px; text-align:center; line-height:72px; font-size:32px; box-shadow:0 6px 20px rgba(37,211,102,0.4); z-index:1000; transition:all .3s; }
+        .whatsapp-float:hover { transform:scale(1.08); box-shadow:0 10px 25px rgba(37,211,102,0.6); }
+        .notification-badge { position:absolute; top:-6px; right:-6px; background:var(--accent); color:white; border-radius:50%; width:28px; height:28px; font-size:14px; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+
+        .fade-in { opacity:0; transform:translateY(30px); transition:opacity .6s ease, transform .6s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+
+        .form-control { border-radius:10px; padding:12px 16px; border:1px solid #e1e1e1; transition:all .3s; }
+        .form-control:focus { border-color:var(--primary); box-shadow:0 0 0 .25rem rgba(0,102,204,0.12); }
+
+        .badge-custom { background:var(--gradient); color:white; padding:8px 20px; border-radius:50px; font-weight:600; font-size:.9rem; display:inline-block; margin-bottom:15px; }
+
+        .gallery-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:20px; margin-top:20px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; }
+        .gallery-item img { width:100%; height:250px; object-fit:cover; transition:transform .5s ease; }
+        .gallery-caption { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); color:white; padding:10px; font-size:.9rem; opacity:0; transition:opacity .25s ease; transform: translateY(100%); }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+
+        /* Tabs de galeria */
+        .gallery-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .gallery-tab { background: #f1f1f1; border: none; padding: 10px 20px; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
+        .gallery-tab.active, .gallery-tab:hover { background: var(--gradient); color: white; }
+
+        /* Cookie banner */
+        .cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; background: #fff; color: #222; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 16px; border-radius: 12px; display:flex; gap:12px; align-items:center; z-index:2000; }
+        .cookie-banner p { margin:0; font-size:.95rem; }
+        .cookie-actions { margin-left:auto; display:flex; gap:8px; }
+
+        /* Loading state para formulário */
+        .btn-loading { position: relative; color: transparent !important; }
+        .btn-loading::after { content: ''; position: absolute; width: 20px; height: 20px; top: 50%; left: 50%; margin: -10px 0 0 -10px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Barra de progresso de leitura */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; }
+        .progress-bar { height: 4px; background: var(--gradient); width: 0%; }
+
+        /* Melhorias de acessibilidade */
+        .skip-link { position: absolute; top: -40px; left: 10px; background: var(--primary); color: white; padding: 8px; z-index: 10000; }
+        .skip-link:focus { top: 10px; }
+
+        /* Responsive tweaks */
+        @media (max-width:768px) {
+            body { padding-top:70px; }
+            .hero { padding:80px 0 60px; }
+            .section-title { font-size:2rem; }
+            .whatsapp-float { width:64px; height:64px; line-height:64px; font-size:28px; }
+            .gallery-grid { grid-template-columns:1fr; }
+            .cookie-banner { flex-direction: column; text-align: center; }
+            .cookie-actions { margin: 10px 0 0; }
+        }
+    </style>
+
+    <!-- JSON-LD (Organization, LocalBusiness, Service, Breadcrumb, FAQ) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://seusite.com/#org",
+          "name": "Xtreme Gestor de Tráfego",
+          "url": "https://seusite.com",
+          "logo": "https://i.ibb.co/kgS4m24K/logo.jpg",
+          "sameAs": [
+            "https://www.instagram.com/xtremegestor",
+            "https://wa.me/5534998329922"
+          ],
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+55-34-99983-29922",
+            "contactType": "customer service",
+            "areaServed": "BR",
+            "availableLanguage": ["Portuguese"]
+          }]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://seusite.com/#localbusiness",
+          "name": "Xtreme Gestor de Tráfego",
+          "image": "https://i.ibb.co/kgS4m24K/logo.jpg",
+          "priceRange": "R$",
+          "telephone": "+55349998329922",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Endereço exemplo, 123",
+            "addressLocality": "Sua Cidade",
+            "addressRegion": "Seu Estado",
+            "postalCode": "00000-000",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -18.0,
+            "longitude": -48.0
+          },
+          "url": "https://seusite.com",
+          "sameAs": ["https://www.instagram.com/xtremegestor"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://seusite.com/#website",
+          "url": "https://seusite.com",
+          "name": "Xtreme Gestor de Tráfego",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://seusite.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://seusite.com/#breadcrumb",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://seusite.com"},
+            {"@type":"ListItem","position":2,"name":"Serviços","item":"https://seusite.com#services"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://seusite.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como funciona a consultoria?",
+              "acceptedAnswer": {"@type":"Answer","text":"Fazemos diagnóstico, planejamento de campanhas, execução e otimização semanal. Resultados em 2-8 semanas dependendo do segmento."}
+            },
+            {
+              "@type": "Question",
+              "name": "Quais plataformas vocês trabalham?",
+              "acceptedAnswer": {"@type":"Answer","text":"Google Ads, Meta (Facebook/Instagram), TikTok e otimização de Google Meu Negócio."}
+            }
+          ]
+        }
+      ]
     }
-  </script>
-
-  <!-- View Transitions API -->
-  <meta name="view-transition" content="same-origin">
-
-  <!-- Critical inline CSS -->
-  <style>
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111}
-    .btn{@apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 focus:outline-none focus:ring-4}
-    .btn-primary{@apply bg-primary text-white hover:bg-blue-700 focus:ring-blue-300}
-    .btn-whatsapp{@apply bg-secondary text-white hover:bg-green-600 focus:ring-green-300}
-    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
-    .fade-in.visible{opacity:1;transform:translateY(0)}
-    .glass{@apply bg-white/80 backdrop-blur border border-white/20 shadow-sm}
-    @property --hue{syntax:"<number>";inherits:false;initial-value:0}
-    .animated-gradient{background:linear-gradient(135deg,hsl(var(--hue) 80% 55%),hsl(calc(var(--hue) + 40) 80% 55%));animation:hue-rotate 12s linear infinite}
-    @keyframes hue-rotate{to{--hue:360}}
-    #gestureHint{display:none;position:fixed;bottom:110px;right:24px;background:#111;color:#fff;padding:8px 14px;border-radius:8px;font-size:.8rem;z-index:50}
-  </style>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Xtreme Gestor de Tráfego","url":"https://seusite.com","logo":"https://i.ibb.co/kgS4m24K/logo.jpg","contactPoint":{"@type":"ContactPoint","telephone":"+55-34-99983-29922","contactType":"sales","areaServed":"BR","availableLanguage":"Portuguese"}}
-  </script>
+    </script>
 </head>
+<body>
+    <!-- Link de pular navegação para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <!-- Barra de progresso de leitura -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-<body class="antialiased">
-
-<!-- TOP BAR MOBILE -->
-<div class="lg:hidden fixed top-0 left-0 right-0 bg-gray-900 text-white text-xs flex justify-between items-center px-4 py-1 z-40">
-  <a href="tel:+55349998329922">📞 (34) 99983-29922</a>
-  <a href="https://wa.me/5534998329922">WhatsApp</a>
-</div>
-
-<!-- NAV -->
-<header class="fixed top-0 left-0 right-0 glass z-50">
-  <div class="container mx-auto px-4 flex items-center justify-between h-16">
-    <a class="flex items-center gap-2 font-display font-bold text-lg" href="#home">
-      <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo" class="h-8 rounded-full">
-      xtreme <span class="text-primary">gestor</span>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5534998329922?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp" role="button">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="notification-badge" aria-hidden="true">1</span>
     </a>
-    <nav class="hidden md:flex gap-6 items-center">
-      <a href="#services" class="hover:text-primary">Serviços</a>
-      <a href="#gallery" class="hover:text-primary">Portfólio</a>
-      <a href="#testimonials" class="hover:text-primary">Depoimentos</a>
-      <a href="#contact" class="hover:text-primary">Contato</a>
-      <a href="https://wa.me/5534998329922" class="btn btn-whatsapp">Orçamento</a>
+
+    <!-- Top bar / phone (mobile visible) -->
+    <div class="d-lg-none position-fixed top-0 start-0 end-0 bg-dark text-white py-1" style="z-index:999;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="tel:+55349998329922" class="text-white small" aria-label="Ligar agora">📞 (34) 99983-29922</a>
+            <a href="https://wa.me/5534998329922" class="text-white small" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Página inicial">
+                <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Xtreme Gestor" width="40" height="40" style="margin-right:8px;" loading="lazy">
+                <span>xtreme <small class="text-muted">gestor</small></span>
+            </a>
+
+            <div class="navbar-text ms-auto d-none d-lg-block blinking-text" aria-hidden="true">
+                Matheus Xtreme — Gestor de Tráfego
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                    <li class="nav-item ms-2"><a href="https://wa.me/5534998329922" class="btn btn-custom btn-whatsapp btn-sm" aria-label="Orçamento pelo WhatsApp">Orçamento</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <button id="navToggle" class="md:hidden text-gray-800" aria-label="Menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
-</header>
 
-<!-- HERO -->
-<section id="home" class="animated-gradient text-white min-h-screen flex items-center justify-center text-center px-4 pt-20">
-  <div class="max-w-3xl fade-in">
-    <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Matheus Xtreme" class="w-32 rounded-full mx-auto mb-4 shadow-lg">
-    <span class="inline-block bg-white/20 text-xs font-semibold px-3 py-1 rounded-full mb-3">Resultado em 60 dias ou devolvemos</span>
-    <h1 class="font-display text-4xl md:text-6xl font-extrabold mb-4">Sua empresa no próximo nível</h1>
-    <p class="text-lg md:text-xl mb-8">Gestão de tráfego pago, sites e apps que convertem. Sem enrolação, só números.</p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="https://wa.me/5534998329922" class="btn btn-whatsapp text-lg">💬 Falar no WhatsApp</a>
-      <a href="#services" class="btn btn-primary text-lg">Ver serviços</a>
-    </div>
-  </div>
-</section>
+    <!-- HERO -->
+    <section class="hero" id="home" role="region" aria-label="Hero principal">
+        <div class="container hero-content">
+            <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Matheus Xtreme Gestor de Tráfego" class="logo" width="280" height="280" loading="eager">
+            <span class="badge-custom">Gestor de Tráfego Certified</span>
+            <h1 class="display-4 fw-bold">Sua empresa no próximo nível</h1>
+            <p class="lead mb-4">Geramos <strong>LEADS</strong> e <strong>VENDAS</strong> com campanhas otimizadas e sites conversores.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://wa.me/5534998329922" class="btn-custom btn-whatsapp btn-lg" aria-label="Fale comigo no WhatsApp">
+                    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Fale comigo
+                </a>
+                <a href="#services" class="btn-custom btn-primary-custom btn-lg" aria-label="Nossos serviços">
+                    <i class="fas fa-chart-line me-2" aria-hidden="true"></i>Nossos serviços
+                </a>
+            </div>
+        </div>
+    </section>
 
-<!-- SERVICES -->
-<section id="services" class="py-20 px-4">
-  <div class="container mx-auto">
-    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-10 fade-in">Nossos Serviços</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="glass rounded-2xl p-6 fade-in"><div class="text-3xl mb-3">📈</div><h3 class="font-semibold mb-1">Gestão de Tráfego</h3><p class="text-sm">Google Ads & Meta Ads com ROI garantido.</p></div>
-      <div class="glass rounded-2xl p-6 fade-in"><div class="text-3xl mb-3">🌐</div><h3 class="font-semibold mb-1">Sites de Alta Conversão</h3><p class="text-sm">Design + copy + performance 100.</p></div>
-      <div class="glass rounded-2xl p-6 fade-in"><div class="text-3xl mb-3">📱</div><h3 class="font-semibold mb-1">Apps Personalizados</h3><p class="text-sm">Android & iOS nativos ou PWA.</p></div>
-      <div class="glass rounded-2xl p-6 fade-in"><div class="text-3xl mb-3">📍</div><h3 class="font-semibold mb-1">Google Meu Negócio</h3><p class="text-sm">Top 3 do Maps em 30 dias.</p></div>
-    </div>
-  </div>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="py-5" role="region" aria-label="Serviços">
+        <div class="container">
+            <h2 class="section-title fade-in">Nossos Serviços</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Gestão de Tráfego">
+                    <div class="card card-custom text-center p-4 h-100">
+                        <i class="fas fa-bullhorn fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3>Gestão de Tráfego</h3>
+                        <p>Meta ADS e Google ADS com estratégias comprovadas</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver resultados</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Criação de Sites">
+                    <div class="card card-custom text-center p-4 h-100">
+                        <i class="fas fa-code fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3>Criação de Sites</h3>
+                        <p>Sites responsivos, modernos e otimizados para conversão</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver exemplos</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Apps Personalizados">
+                    <div class="card card-custom text-center p-4 h-100">
+                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3>Apps Personalizados</h3>
+                        <p>Aplicativos sob medida para Android e iOS</p>
+                        <a href="#contact" class="btn btn-sm btn-primary-custom mt-3">Solicitar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Google Meu Negócio">
+                    <div class="card card-custom text-center p-4 h-100">
+                        <i class="fas fa-store fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h3>Google Meu Negócio</h3>
+                        <p>Otimização profissional para aparecer no Google Maps</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver casos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="py-20 px-4 bg-gray-50">
-  <div class="container mx-auto">
-    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-10 fade-in">Portfólio de Resultados</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src="https://source.unsplash.com/600x400/?website" class="rounded-2xl shadow-md fade-in" alt="Site conversor">
-      <img src="https://source.unsplash.com/600x400/?ads" class="rounded-2xl shadow-md fade-in" alt="Campanha">
-      <img src="https://source.unsplash.com/600x400/?app" class="rounded-2xl shadow-md fade-in" alt="App">
-    </div>
-  </div>
-</section>
+    <!-- GALLERY -->
+    <section id="gallery" class="py-5 bg-light" role="region" aria-label="Portfólio">
+        <div class="container">
+            <h2 class="section-title fade-in">Nosso Portfólio</h2>
+            
+            <div class="gallery-tabs" role="tablist" aria-label="Categorias da galeria">
+                <button class="gallery-tab active" data-target="sites" role="tab" aria-selected="true" aria-controls="sites-gallery">Sites Desenvolvidos</button>
+                <button class="gallery-tab" data-target="google" role="tab" aria-selected="false" aria-controls="google-gallery">Google Meu Negócio</button>
+                <button class="gallery-tab" data-target="meta" role="tab" aria-selected="false" aria-controls="meta-gallery">Meta ADS</button>
+            </div>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="py-20 px-4">
-  <div class="container mx-auto">
-    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-10 fade-in">O que dizem nossos clientes</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <blockquote class="glass rounded-2xl p-6 fade-in"><div class="text-yellow-400 mb-2">★★★★★</div><p>“Aumentamos 47 % as vendas em 2 meses. Top demais!”</p><footer class="text-right text-sm mt-2 font-semibold">— Junior Oliveira</footer></blockquote>
-      <blockquote class="glass rounded-2xl p-6 fade-in"><div class="text-yellow-400 mb-2">★★★★★</div><p>“Site rápido e campanhas que convertem. Recomendo!”</p><footer class="text-right text-sm mt-2 font-semibold">— Daniel Fernandes</footer></blockquote>
-      <blockquote class="glass rounded-2xl p-6 fade-in"><div class="text-yellow-400 mb-2">★★★★★</div><p>“Aparecemos no Google Maps em 1 semana. Excelente.”</p><footer class="text-right text-sm mt-2 font-semibold">— Maria Silva</footer></blockquote>
-    </div>
-  </div>
-</section>
+            <div class="gallery-content active" id="sites-gallery" role="tabpanel" aria-labelledby="sites-tab">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/K3htf1r/site1.jpg" alt="Site profissional desenvolvido - Exemplo 1" loading="lazy">
+                        <div class="gallery-caption">Site profissional desenvolvido para cliente</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/nH45dRj/site2.jpg" alt="Site desenvolvido Exemplo 2" loading="lazy">
+                        <div class="gallery-caption">Site conversor com otimização SEO</div>
+                    </div>
+                </div>
+            </div>
 
-<!-- CTA -->
-<section class="py-20 px-4 animated-gradient text-white text-center">
-  <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 fade-in">Pronto para alavancar?</h2>
-  <p class="mb-8 fade-in">Consultoria gratuita e sem pegadinhas.</p>
-  <a href="https://wa.me/5534998329922" class="btn btn-whatsapp text-xl fade-in">💬 Quero resultados</a>
-</section>
+            <div class="gallery-content" id="google-gallery" role="tabpanel" aria-labelledby="google-tab" hidden>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/39MH8tb8/gmb1.jpg" alt="Google Meu Negócio otimizado Exemplo" loading="lazy">
+                        <div class="gallery-caption">Otimização completa de perfil no Google Meu Negócio</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Qjpf878g/gmb2.jpg" alt="Perfil Google Meu Negócio Exemplo 2" loading="lazy">
+                        <div class="gallery-caption">Fotos e posts para aumentar visibilidade</div>
+                    </div>
+                </div>
+            </div>
 
-<!-- CONTACT -->
-<section id="contact" class="py-20 px-4 bg-gray-50">
-  <div class="container mx-auto max-w-3xl">
-    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-10 fade-in">Entre em contato</h2>
-    <form id="contactForm" class="glass rounded-2xl p-6 fade-in">
-      <input type="text" name="hp_field" class="hidden" tabindex="-1">
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <input type="text" id="name" name="name" placeholder="Seu nome" required class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-        <input type="email" id="email" name="email" placeholder="Seu e-mail" required class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+            <div class="gallery-content" id="meta-gallery" role="tabpanel" aria-labelledby="meta-tab" hidden>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Campanha Meta ADS - exemplo" loading="lazy">
+                        <div class="gallery-caption">Campanha de tráfego - Resultados expressivos</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/dsLgwpvw/meta2.jpg" alt="Meta Ads resultado Exemplo" loading="lazy">
+                        <div class="gallery-caption">Conversões rápidas via anúncios</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASES / STATS -->
+    <section class="case-section py-5" role="region" aria-label="Resultados">
+        <div class="container">
+            <h2 class="section-title fade-in">Resultados de Tráfego Pago</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in">
+                    <div class="stats-container">
+                        <div class="stat-item mb-4">
+                            <div class="stats-number">R$0,71</div>
+                            <div class="stats-label">Custo por Conversa</div>
+                        </div>
+                        <div class="stat-item mb-4">
+                            <div class="stats-number">55+</div>
+                            <div class="stats-label">Conversas Iniciadas</div>
+                        </div>
+                        <div class="stat-item mb-4">
+                            <div class="stats-number">4.956</div>
+                            <div class="stats-label">Pessoas Alcançadas</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 d-flex gap-2 flex-wrap">
+                        <a href="https://wa.me/5534998329922" class="btn btn-whatsapp btn-custom"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Quero resultados</a>
+                        <a href="#contact" class="btn btn-primary-custom btn-custom"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Solicitar Orçamento</a>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Resultados Meta ADS" class="case-image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+    <section id="testimonials" class="social-proof py-5" role="region" aria-label="Depoimentos">
+        <div class="container">
+            <h2 class="text-white mb-5 text-center fade-in">O que nossos clientes dizem</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2" aria-label="5 estrelas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Super Indico! O melhor da Região. Depois que contratei o Matheus, minhas vendas aumentaram 47% em apenas 2 meses."</p>
+                        <strong>- Junior Oliveira</strong>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2" aria-label="5 estrelas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"O cara é top, sem tempo ruim sem frescura, bom de serviço, recomendo. Fizemos um site e campanhas no Google Ads que trouxeram muitos clientes."</p>
+                        <strong>- Daniel Fernandes</strong>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2" aria-label="5 estrelas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Atendimento excelente e resultados rápidos. Em uma semana já estava aparecendo no Google Maps. Recomendo!"</p>
+                        <strong>- Maria Silva</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section py-5" role="region" aria-label="Chamada para ação">
+        <div class="container text-center">
+            <h2 class="mb-3 fade-in">Pronto para alavancar seu negócio?</h2>
+            <p class="lead mb-4 fade-in">Receba uma consultoria gratuita — sem enrolação.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://wa.me/5534998329922" class="btn btn-whatsapp btn-custom btn-lg fade-in" aria-label="Falar no WhatsApp">
+                    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Falar no WhatsApp
+                </a>
+                <a href="#contact" class="btn btn-primary-custom btn-custom btn-lg fade-in" aria-label="Enviar mensagem pelo formulário">
+                    <i class="fas fa-envelope me-2" aria-hidden="true"></i>Enviar mensagem
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="case-section py-5" role="region" aria-label="Contato">
+        <div class="container">
+            <h2 class="section-title fade-in">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <form id="contactForm" novalidate>
+                        <input type="text" name="hp_field" id="hp_field" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required aria-label="Seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail" required aria-label="Seu e-mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Seu telefone" aria-label="Seu telefone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Sua mensagem" required aria-label="Sua mensagem"></textarea>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-whatsapp btn-custom w-100" id="submitButton">
+                                <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Enviar Mensagem
+                            </button>
+                        </div>
+
+                        <small class="form-text text-muted mt-2">Ao enviar, você aceita nossa <a href="#privacyModal" data-bs-toggle="modal">Política de Privacidade</a>.</small>
+                    </form>
+
+                    <div id="formSuccess" class="alert alert-success mt-3" style="display:none;" role="alert">
+                        Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                    <div id="formError" class="alert alert-danger mt-3" style="display:none;" role="alert">
+                        Ocorreu um erro. Por favor, tente novamente ou entre em contato diretamente pelo WhatsApp.
+                    </div>
+                </div>
+
+                <div class="col-md-6 fade-in">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <h3>Informações de Contato</h3>
+                        <p><i class="fas fa-envelope me-2 text-primary" aria-hidden="true"></i> <a href="mailto:contato.matheusxtreme@gmail.com">contato.matheusxtreme@gmail.com</a></p>
+                        <p><i class="fab fa-whatsapp me-2 text-success" aria-hidden="true"></i> <a href="https://wa.me/5534998329922">(34) 99983-29922</a></p>
+                        <p><i class="fab fa-instagram me-2 text-danger" aria-hidden="true"></i> <a href="https://www.instagram.com/xtremegestor" target="_blank" rel="noopener">@xtremegestor</a></p>
+
+                        <div class="mt-4">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábado: 9h às 12h</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="tel:+55349998329922" class="btn btn-primary-custom btn-custom"><i class="fas fa-phone me-2" aria-hidden="true"></i>Ligar Agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-5" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>xtreme gestor de tráfego</h3>
+                    <p>Transformando negócios através de soluções digitais completas.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Serviços</h4>
+                    <ul class="list-unstyled">
+                        <li>Gestão de Tráfego</li>
+                        <li>Criação de Sites</li>
+                        <li>Apps Personalizados</li>
+                        <li>Google Meu Negócio</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contato</h4>
+                    <div class="mt-3">
+                        <a href="https://www.instagram.com/xtremegestor" class="text-white me-3" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://wa.me/5534998329922" class="text-white me-3" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="mailto:contato.matheusxtreme@gmail.com" class="text-white" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <div>© <span id="year"></span> xtreme gestor de tráfego - Todos os direitos reservados</div>
+                <div class="mt-2 mt-md-0">
+                    <a href="#aboutModal" data-bs-toggle="modal" class="text-white me-3">Sobre Nós</a>
+                    <a href="#privacyModal" data-bs-toggle="modal" class="text-white me-3">Política de Privacidade</a>
+                    <a href="#termsModal" data-bs-toggle="modal" class="text-white">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="aboutLabel">Sobre Nós</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <h4>Xtreme Gestor de Tráfego</h4>
+            <p>Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio. Trabalhamos com metodologia baseada em dados, testes A/B e foco em ROAS e LTV.</p>
+            <h5>Nossa missão</h5>
+            <p>Aumentar resultados reais do cliente através de estratégias transparentes e escaláveis.</p>
+            <h5>Por que escolher a gente</h5>
+            <ul>
+                <li>Relatórios transparentes e fáceis de entender.</li>
+                <li>Suporte via WhatsApp e reuniões semanais.</li>
+                <li>Planos escaláveis com orçamento otimizado.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
       </div>
-      <input type="tel" id="phone" name="phone" placeholder="Telefone (opcional)" class="w-full px-4 py-2 rounded-lg border border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-primary">
-      <textarea id="message" name="message" rows="4" placeholder="Sua mensagem" required class="w-full px-4 py-2 rounded-lg border border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-      <button type="submit" class="btn btn-primary w-full">Enviar mensagem</button>
-      <p class="text-xs text-gray-600 mt-2">Ao enviar você aceita nossa <a href="#privacy" class="underline">Política de Privacidade</a>.</p>
-    </form>
-    <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg">Mensagem enviada! Entraremos em contato em breve.</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white py-10 px-4">
-  <div class="container mx-auto text-center">
-    <div class="flex justify-center gap-4 mb-4">
-      <a href="https://www.instagram.com/xtremegestor" target="_blank" aria-label="Instagram">📸 Instagram</a>
-      <a href="https://wa.me/5534998329922" aria-label="WhatsApp">💬 WhatsApp</a>
-      <a href="mailto:contato.matheusxtreme@gmail.com" aria-label="E-mail">✉️ E-mail</a>
     </div>
-    <p class="text-sm">© <span id="year"></span> xtreme gestor de tráfego – Todos os direitos reservados</p>
-    <p class="text-xs mt-2"><a href="#privacy" class="underline">Política de Privacidade</a> | <a href="#terms" class="underline">Termos de Uso</a></p>
-  </div>
-</footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5534998329922" class="fixed bottom-6 right-6 bg-secondary text-white rounded-full w-14 h-14 flex items-center justify-center text-2xl shadow-lg z-50" aria-label="WhatsApp">💬</a>
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="privacyLabel">Política de Privacidade</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Última atualização: <strong>2025-09-11</strong></p>
+            <p>Coletamos apenas as informações necessárias para contato e prestação de serviços (nome, e-mail, telefone e mensagem). Essas informações são usadas para responder às suas solicitações, enviar propostas e prestar suporte. Não vendemos dados a terceiros.</p>
 
-<!-- GESTURE HINT -->
-<div id="gestureHint">✊ Feche a mão para abrir WhatsApp</div>
+            <h5>Cookies</h5>
+            <p>Usamos cookies essenciais para funcionamento do site e cookies analíticos para melhorar o serviço. Você pode aceitar ou recusar cookies através do banner. Para gerenciar ou excluir cookies, use as configurações do seu navegador.</p>
 
-<!-- SCRIPTS -->
-<script>
-  // ano footer
-  document.getElementById('year').innerText=new Date().getFullYear();
+            <h5>Base legal (LGPD)</h5>
+            <p>O tratamento dos dados tem base em: execução de contrato/execução de medidas pré-contratuais e consentimento.</p>
 
-  // fade observer
-  const io=new IntersectionObserver(e=>e.forEach(el=>el.target.classList.add('visible')),{threshold:.15});
-  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+            <h5>Contato</h5>
+            <p>Para solicitar remoção de dados ou questionamentos: <a href="mailto:contato.matheusxtreme@gmail.com">contato.matheusxtreme@gmail.com</a></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  // mobile nav
-  const navToggle=document.getElementById('navToggle');
-  const navMenu=document.createElement('div');
-  navMenu.className='md:hidden absolute top-16 left-0 right-0 glass flex flex-col items-center gap-4 py-4 hidden';
-  navMenu.innerHTML=`
-    <a href="#services" class="hover:text-primary">Serviços</a>
-    <a href="#gallery" class="hover:text-primary">Portfólio</a>
-    <a href="#testimonials" class="hover:text-primary">Depoimentos</a>
-    <a href="#contact" class="hover:text-primary">Contato</a>
-    <a href="https://wa.me/5534998329922" class="btn btn-whatsapp">Orçamento</a>
-  `;
-  document.querySelector('header').appendChild(navMenu);
-  navToggle.addEventListener('click',()=>navMenu.classList.toggle('hidden'));
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="termsLabel">Termos de Uso</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Estes Termos de Uso regem o acesso e utilização do site. Ao utilizar este site, você concorda com os termos e políticas descritas. Os serviços contratados serão formalizados por proposta ou contrato separado entre as partes.</p>
+            <h5>Serviços e responsabilidades</h5>
+            <p>As partes acordam prazos e entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente e verba publicitária.</p>
+            <h5>Cancelamentos e reembolsos</h5>
+            <p>Conforme contrato assinado.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  // form
-  document.getElementById('contactForm').addEventListener('submit',e=>{
-    e.preventDefault();
-    if(document.getElementById('hp_field').value)return;
-    const{name,email,message}=e.target.elements;
-    if(!name.value||!email.value||!message.value){alert('Preencha nome, e-mail e mensagem.');return;}
-    const mailto=`mailto:contato.matheusxtreme@gmail.com?subject=Contato site&body=Nome: ${name.value}%0AEmail: ${email.value}%0ATelefone: ${document.getElementById('phone').value}%0AMensagem: ${message.value}`;
-    window.location.href=mailto;
-    document.getElementById('formSuccess').classList.remove('hidden');
-    e.target.reset();
-  });
+    <!-- Cookie banner (LGPD) -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" style="display:none;">
+        <div>
+            <strong>Usamos cookies</strong>
+            <p style="margin:6px 0 0; font-size:.95rem;">Utilizamos cookies essenciais e analíticos para melhorar a sua experiência. Ao aceitar, continuamos a oferecer nossos serviços e relatórios.</p>
+        </div>
+        <div class="cookie-actions">
+            <button id="declineCookies" class="btn btn-outline-secondary btn-sm">Recusar</button>
+            <button id="acceptCookies" class="btn btn-primary btn-sm">Aceitar</button>
+        </div>
+    </div>
 
-  // gesture CTA (simples pinch via sensor de luz ambiente - fallback)
-  let prev=0;
-  window.addEventListener('devicelight',e=>{
-    if(Math.abs(e.value-prev)>50){window.open('https://wa.me/5534998329922','_blank');prev=e.value;}
-  });
-  // se não tiver sensor, mostra hint e use click duplo
-  document.addEventListener('dblclick',()=>{
-    window.open('https://wa.me/5534998329922','_blank');
-  });
-  setTimeout(()=>document.getElementById('gestureHint').style.display='block',4000);
-</script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPTS PERSONALIZADOS -->
+    <script>
+        // Inserir ano no footer
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // Barra de progresso de leitura
+        window.addEventListener('scroll', function() {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrolled = window.pageYOffset;
+            const progress = (scrolled / (docHeight - winHeight)) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // Fade-in observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+            
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Smooth scroll offset fix for fixed navbar
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.dataset.bsToggle) return;
+                    const targetId = this.getAttribute('href');
+                    if (!targetId || targetId === '#') return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                        
+                        // Atualizar URL sem recarregar a página
+                        if (history.pushState) {
+                            history.pushState(null, null, targetId);
+                        } else {
+                            location.hash = targetId;
+                        }
+                    }
+                });
+            });
+
+            // Gallery tabs
+            const tabs = document.querySelectorAll('.gallery-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                    
+                    const target = tab.getAttribute('data-target');
+                    document.querySelectorAll('.gallery-content').forEach(c => {
+                        if (c.id === (target + '-gallery')) {
+                            c.hidden = false;
+                            c.classList.add('active');
+                        } else {
+                            c.hidden = true;
+                            c.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Cookie banner logic
+            const cookieKey = 'xtreme_cookies_v1';
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+
+            const cookieValue = localStorage.getItem(cookieKey);
+            if (!cookieValue) {
+                setTimeout(() => {
+                    cookieBanner.style.display = 'flex';
+                }, 2000);
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                localStorage.setItem(cookieKey, 'accepted');
+                cookieBanner.style.display = 'none';
+                // Inicializar Google Analytics aqui se necessário
+            });
+            
+            declineBtn?.addEventListener('click', () => {
+                localStorage.setItem(cookieKey, 'declined');
+                cookieBanner.style.display = 'none';
+            });
+        });
+
+        // Contact form
+        (function(){
+            const form = document.getElementById('contactForm');
+            const successBox = document.getElementById('formSuccess');
+            const errorBox = document.getElementById('formError');
+            const submitButton = document.getElementById('submitButton');
+
+            form?.addEventListener('submit', async function(e){
+                e.preventDefault();
+                
+                // Honeypot check
+                const hp = document.getElementById('hp_field').value;
+                if (hp && hp.trim().length > 0) return;
+
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    alert('Por favor preencha nome, e-mail e mensagem.');
+                    return;
+                }
+
+                // Mostrar estado de carregamento
+                submitButton.classList.add('btn-loading');
+                
+                try {
+                    // Se você tiver um endpoint backend, use isso:
+                    // const response = await fetch('https://seu-endpoint.com/contact', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ name, email, phone, message })
+                    // });
+                    
+                    // Simular delay de rede
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Fallback para mailto
+                    const subject = encodeURIComponent('Novo contato do site xtreme gestor');
+                    const body = encodeURIComponent(`Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0A%0AMensagem:%0A${message}`);
+                    
+                    successBox.style.display = 'block';
+                    errorBox.style.display = 'none';
+                    form.reset();
+                    
+                    // Abrir cliente de email como fallback
+                    window.location.href = `mailto:contato.matheusxtreme@gmail.com?subject=${subject}&body=${body}`;
+                    
+                } catch (error) {
+                    errorBox.style.display = 'block';
+                    successBox.style.display = 'none';
+                } finally {
+                    submitButton.classList.remove('btn-loading');
+                }
+            });
+        })();
+    </script>
 </body>
-</html>
+  </html>
