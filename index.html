@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus xtreme gestor de tráfego - Especialista em Google, Meta ADS e Criação de Sites</title>
+    <meta name="description" content="Geramos leads e vendas através de gestão de tráfego, criação de sites e apps personalizados. Faça sua empresa aparecer no Google, Instagram e Facebook.">
+    <meta name="keywords" content="gestor de tráfego, meta ads, google ads, criação de sites, google meu negócio, aplicativos">
+    
+    <!-- Meta Tags para Redes Sociais (Open Graph) -->
+    <meta property="og:title" content="Matheus xtreme gestor de tráfego">
+    <meta property="og:description" content="Geramos leads e vendas através de gestão de tráfego e criação de sites.">
+    <meta property="og:image" content="https://i.ibb.co/kgS4m24K/logo.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Preconnect para melhor performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004d99;
+            --secondary: #25D366;
+            --secondary-dark: #128C7E;
+            --accent: #FF6B35;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* --- NAVBAR --- */
+        .navbar {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+        }
+        
+        .blinking-text {
+            animation: blink 2s infinite;
+            font-weight: bold;
+            color: var(--secondary) !important;
+            font-size: 1.4rem !important;
+            text-shadow: 0 0 10px rgba(37, 211, 102, 0.8);
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        /* --- BOTÕES --- */
+        .btn-custom {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-custom:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            border-radius: 50px;
+            z-index: -2;
+        }
+        
+        .btn-custom:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            z-index: -1;
+        }
+        
+        .btn-custom:hover:before {
+            width: 100%;
+        }
+        
+        .btn-whatsapp {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            color: white;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+            color: white;
+        }
+        
+        /* --- CARDS --- */
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-custom i {
+            transition: all 0.3s ease;
+        }
+        
+        .card-custom:hover i {
+            transform: scale(1.2);
+            color: var(--primary) !important;
+        }
+
+        /* --- ESTRUTURA --- */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.08;
+            z-index: 1;
+            max-width: 500px;
+            animation: piscarLogo 6s infinite;
+            filter: invert(1) brightness(200%);
+        }
+        
+        @keyframes piscarLogo {
+            0% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.1; transform: translate(-50%, -50%) scale(1.05); }
+            100% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .logo {
+            max-width: 280px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .case-image {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 25px;
+            width: 100%;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+        
+        .case-image:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        /* --- ESTATÍSTICAS --- */
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stats-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* --- DEPOIMENTOS --- */
+        .testimonial {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 25px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 102, 204, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        /* --- BOTÃO FLUTUANTE WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 34px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+        
+        .whatsapp-float .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+            50% { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-8px);}
+            60% {transform: translateY(-4px);}
+        }
+        
+        /* --- ANIMAÇÕES DE SCROLL --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- FORMULÁRIO --- */
+        .form-control {
+            border-radius: 10px;
+            padding: 15px 20px;
+            border: 1px solid #e1e1e1;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+        }
+        
+        /* --- NOVOS COMPONENTES --- */
+        .badge-custom {
+            background: var(--gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .social-proof {
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-proof:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .cta-section {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        /* --- GALERIA DE FOTOS --- */
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .gallery-tab {
+            padding: 12px 25px;
+            background: white;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .gallery-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .gallery-tab:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .gallery-content {
+            display: none;
+        }
+        
+        .gallery-content.active {
+            display: block;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .hero { padding: 80px 0 60px; }
+            .section-title { font-size: 2.2rem; }
+            .logo { max-width: 200px; }
+            .whatsapp-float {
+                width: 65px; 
+                height: 65px;
+                line-height: 65px; 
+                font-size: 30px;
+            }
+            .blinking-text { font-size: 1.1rem !important; }
+            .hero-logo-bg { max-width: 300px; }
+            .stat-item { padding: 15px; }
+            .stats-number { font-size: 2.2rem; }
+            .testimonial { padding: 25px 20px; }
+            .section-title:after { bottom: -10px; }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-tab {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão Flutuante do WhatsApp com notificação -->
+    <a href="https://wa.me/5534998329922?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp" role="button">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="notification-badge">1</span>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#" aria-label="Página inicial">
+                <span class="logo-text">xtreme<span class="blinking-text">gestor</span></span>
+            </a>
+            
+            <div class="navbar-text ms-auto d-none d-lg-block blinking-text">
+                Matheus xtreme gestor de tráfego
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                    <li class="nav-item ms-2"><a href="https://wa.me/5534998329922" class="btn btn-custom btn-whatsapp btn-sm">Orçamento</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo-bg">
+            <svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M250 50C142.8 50 55 137.8 55 245S142.8 440 250 440s195-87.8 195-195S357.2 50 250 50zm0 350c-85.5 0-155-69.5-155-155S164.5 90 250 90s155 69.5 155 155-69.5 155-155 155z" fill="currentColor"/>
+                <path d="M250 130c-63.4 0-115 51.6-115 115s51.6 115 115 115 115-51.6 115-115-51.6-115-115-115zm0 200c-46.9 0-85-38.1-85-85s38.1-85 85-85 85 38.1 85 85-38.1 85-85 85z" fill="currentColor"/>
+                <path d="M250 170c-41.4 0-75 33.6-75 75s33.6 75 75 75 75-33.6 75-75-33.6-75-75-75z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container hero-content">
+            <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Matheus Xtreme Gestor de Tráfego" class="logo">
+            <span class="badge-custom">Gestor de Tráfego Certified</span>
+            <h1 class="display-4 fw-bold">Sua empresa no próximo nível</h1>
+            <p class="lead mb-4">Geramos LEADS e VENDAS através de estratégias digitais integradas com foco em resultados</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://wa.me/5534998329922" class="btn-custom btn-whatsapp btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Fale comigo
+                </a>
+                <a href="#services" class="btn-custom btn-primary-custom btn-lg">
+                    <i class="fas fa-chart-line me-2"></i>Nossos serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Nossos Serviços</h2>
+            <div class="row g-4">
+                <div class="col-md-3 fade-in">
+                    <div class="card card-custom text-center p-4">
+                        <i class="fas fa-bullhorn fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h5>Gestão de Tráfego</h5>
+                        <p>Meta ADS e Google ADS com estratégias comprovadas</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver resultados</a>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card card-custom text-center p-4">
+                        <i class="fas fa-code fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h5>Criação de Sites</h5>
+                        <p>Sites responsivos, modernos e otimizados para conversão</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver exemplos</a>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card card-custom text-center p-4">
+                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h5>Apps Personalizados</h5>
+                        <p>Aplicativos sob medida para Android e iOS</p>
+                        <a href="#contact" class="btn btn-sm btn-primary-custom mt-3">Solicitar</a>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card card-custom text-center p-4">
+                        <i class="fas fa-store fa-3x text-primary mb-3" aria-hidden="true"></i>
+                        <h5>Google Meu Negócio</h5>
+                        <p>Otimização profissional para aparecer no Google Maps</p>
+                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver casos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Galeria de Portfólio -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Nosso Portfólio</h2>
+            
+            <div class="gallery-tabs">
+                <div class="gallery-tab active" data-target="sites">Sites Desenvolvidos</div>
+                <div class="gallery-tab" data-target="google">Google Meu Negócio</div>
+                <div class="gallery-tab" data-target="meta">Meta ADS</div>
+            </div>
+            
+            <!-- Galeria: Sites Desenvolvidos -->
+            <div class="gallery-content active" id="sites-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/K3htf1r/site1.jpg" alt="Site desenvolvido 1">
+                        <div class="gallery-caption">Site profissional desenvolvido para cliente</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/nH45dRj/site2.jpg" alt="Site desenvolvido 2">
+                        <div class="gallery-caption">Google meu negócio feito com sucesso</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galeria: Google Meu Negócio -->
+            <div class="gallery-content" id="google-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/39MH8tb8/gmb1.jpg" alt="Google Meu Negócio 1">
+                        <div class="gallery-caption">Otimização completa de perfil no Google Meu Negócio</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Qjpf878g/gmb2.jpg" alt="Google Meu Negócio 2">
+                        <div class="gallery-caption">Google Meu Negócio otimizado</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/hJdpqLW2/gmb3.jpg" alt="Google Meu Negócio 3">
+                        <div class="gallery-caption">Gestão de avaliações destacando empresa em menos de uma semana</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/HLJGHNtX/gmb4.jpg" alt="Google Meu Negócio 4">
+                        <div class="gallery-caption">Clientes satisfeitos</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/VYLVLYL0/gmb5.jpg" alt="Google Meu Negócio 5">
+                        <div class="gallery-caption">Relatórios de performance e analytics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galeria: Meta ADS -->
+            <div class="gallery-content" id="meta-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Meta ADS 1">
+                        <div class="gallery-caption">Campanha de tráfego - Resultados expressivos</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/dsLgwpvw/meta2.jpg" alt="Meta ADS 2">
+                        <div class="gallery-caption">Gestão de anúncios no Facebook Ads e Instagram</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/bM71C6kf/meta3.jpg" alt="Meta ADS 3">
+                        <div class="gallery-caption">Campanhas de conversão para compra e venda</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/wNBSgdP5/meta4.jpg" alt="Meta ADS 4">
+                        <div class="gallery-caption">Anúncios patrocinados no Instagram e Facebook</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/RTN6frn4/meta5.jpg" alt="Meta ADS 5">
+                        <div class="gallery-caption">Campanha Meta ADS</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/CpJXKzyZ/meta6.jpg" alt="Meta ADS 6">
+                        <div class="gallery-caption">Campanha ativada com sucesso</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Resultados de Tráfego Pago -->
+    <section class="case-section py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Resultados de Tráfego Pago</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stats-number">R$0,71</div>
+                            <div class="stats-label">Custo por Conversa</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stats-number">55+</div>
+                            <div class="stats-label">Conversas Iniciadas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stats-number">4.956</div>
+                            <div class="stats-label">Pessoas Alcançadas</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5534998329922" class="btn-custom btn-whatsapp mt-4">
+                        <i class="fab fa-whatsapp me-2"></i>Quero resultados assim
+                    </a>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Resultados Meta ADS" class="case-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Prova Social -->
+    <section id="testimonials" class="social-proof py-5">
+        <div class="container">
+            <h2 class="text-white mb-5 text-center fade-in">O que nossos clientes dizem</h2>
+            <div class="row">
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Super Indico! O melhor da Região. Depois que contratei o Matheus, minhas vendas aumentaram 47% em apenas 2 meses."</p>
+                        <strong>- Junior Oliveira</strong>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"O cara é top, sem tempo ruim sem frescura, bom de serviço, recomendo. Fizemos um site e campanhas no Google Ads que trouxeram muitos clientes."</p>
+                        <strong>- Daniel Fernandes</strong>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="testimonial">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Atendimento excelente e resultados rápidos. Em uma semana já estava aparecendo no Google Maps. Recomendo!"</p>
+                        <strong>- Maria Silva</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="mb-4 fade-in">Pronto para alavancar seu negócio?</h2>
+            <p class="lead mb-4 fade-in">Entre em contato agora mesmo e receba uma consultoria gratuita</p>
+            <a href="https://wa.me/5534998329922" class="btn-custom btn-whatsapp btn-lg fade-in">
+                <i class="fab fa-whatsapp me-2"></i>Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact" class="case-section py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <form action="https://formsubmit.co/contato.matheusxtreme@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Novo contato do site xtreme gestor">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Seu nome" required aria-label="Seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required aria-label="Seu e-mail">
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" name="phone" class="form-control" placeholder="Seu telefone" aria-label="Seu telefone">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" rows="5" placeholder="Sua mensagem" required aria-label="Sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn-custom btn-whatsapp btn-lg w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <div class="p-4">
+                        <h4>Informações de Contato</h4>
+                        <p><i class="fas fa-envelope me-2 text-primary"></i> <a href="mailto:contato.matheusxtreme@gmail.com">contato.matheusxtreme@gmail.com</a></p>
+                        <p><i class="fab fa-whatsapp me-2 text-success"></i> <a href="https://wa.me/5534998329922">(34) 99983-29922</a></p>
+                        <p><i class="fab fa-instagram me-2 text-danger"></i> <a href="https://www.instagram.com/xtremegestor" target="_blank">@xtremegestor</a></p>
+                        
+                        <div class="mt-5">
+                            <h5>Horário de Atendimento</h5>
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábado: 9h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>xtreme gestor de tráfego</h5>
+                    <p>Transformando negócios através de soluções digitais completas.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li>Gestão de Tráfego</li>
+                        <li>Criação de Sites</li>
+                        <li>Apps Personalizados</li>
+                        <li>Google Meu Negócio</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <div class="mt-3">
+                        <a href="https://www.instagram.com/xtremegestor" class="text-white me-3" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="https://wa.me/5534998329922" class="text-white me-3" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="mailto:contato.matheusxtreme@gmail.com" class="text-white" aria-label="Email">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>© 2025 xtreme gestor de tráfego - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Animação de scroll para a navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Animação de elementos ao scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Adicionando smooth scroll para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Sistema de abas para a galeria
+            const galleryTabs = document.querySelectorAll('.gallery-tab');
+            galleryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove a classe active de todas as abas
+                    galleryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Adiciona a classe active à aba clicada
+                    this.classList.add('active');
+                    
+                    // Esconde todos os conteúdos
+                    document.querySelectorAll('.gallery-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Mostra o conteúdo correspondente
+                    const target = this.getAttribute('data-target');
+                    document.getElementById(`${target}-gallery`).classList.add('active');
+                });
+            });
+        });
+        
+        // Simulação de envio de formulário
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Aqui você pode adicionar código para enviar o formulário
+                // Simulando um envio bem-sucedido
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
