@@ -400,6 +400,20 @@
                 height: 60vh;
             }
         }
+
+        /* CORREÇÃO DE CONTRASTE GERAL */
+        body, p, li, span, div, .text-muted {
+            color: #333333 !important;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #000000 !important;
+        }
+
+        .navbar-brand small.text-muted {
+            color: #0066cc !important;
+            font-weight: bold;
+        }
     </style>
 
     <!-- JSON-LD (Organization, LocalBusiness, Service, Breadcrumb, FAQ) -->
@@ -543,7 +557,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Página inicial">
                 <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Xtreme Gestor" width="40" height="40" style="margin-right:8px;" loading="lazy">
-                <span>xtreme <small class="text-muted">gestor</small></span>
+                <span style="color: #0066cc !important; font-weight: 800; text-shadow: 0 0 10px rgba(0, 102, 204, 0.4);">xtreme gestor</span>
             </a>
 
             <div class="navbar-text ms-auto d-none d-lg-block blinking-text" aria-hidden="true">
@@ -794,7 +808,7 @@
                 <div class="col-md-4 fade-in">
                     <div class="testimonial">
                         <div class="testimonial-client">
-                            <img src="https://i.pravatar.cc/150?img=32" alt="Foto de Junior Oliveira">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Foto de Junior Oliveira">
                             <div>
                                 <strong>Junior Oliveira</strong>
                                 <div class="text-warning" aria-label="5 estrelas">
@@ -812,7 +826,7 @@
                 <div class="col-md-4 fade-in">
                     <div class="testimonial">
                         <div class="testimonial-client">
-                            <img src="https://i.pravatar.cc/150?img=44" alt="Foto de Daniel Fernandes">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="Foto de Daniel Fernandes">
                             <div>
                                 <strong>Daniel Fernandes</strong>
                                 <div class="text-warning" aria-label="5 estrelas">
@@ -1007,7 +1021,7 @@
           </div>
           <div class="modal-body">
             <p>Última atualização: <strong>2025-09-11</strong></p>
-            <p>Coletamos apenas as informações necessárias para contato e prestação de serviços (nome, e-mail, telefone e mensagem). Essas informações são usadas para responder às suas solicitações, enviar propostas e prestar suporte. Não vendemos dados a terceiros.</p>
+            <p>Coletamos apenas as informações necessárias para contato and prestação de serviços (nome, e-mail, telefone e mensagem). Essas informações são usadas para responder às suas solicitações, enviar propostas e prestar suporte. Não vendemos dados a terceiros.</p>
 
             <h5>Cookies</h5>
             <p>Usamos cookies essenciais para funcionamento do site e cookies analíticos para melhorar o serviço. Você pode aceitar ou recusar cookies através do banner. Para gerenciar ou excluir cookies, use as configurações do seu navegador.</p>
@@ -1035,8 +1049,8 @@
           <div class="modal-body">
             <p>Estes Termos de Uso regem o acesso e utilização do site. Ao utilizar este site, você concorda com os termos e políticas descritas. Os serviços contratados serão formalizados por proposta ou contrato separado entre as partes.</p>
             <h5>Serviços e responsabilidades</h5>
-            <p>As partes acordam prazos e entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente e verba publicitária.</p>
-            <h5>Cancelamentos e reembolsos</h5>
+            <p>As partes acordam prazos e entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente and verba publicitária.</p>
+            <h5>Cancelamentos and reembolsos</h5>
             <p>Conforme contrato assinado.</p>
           </div>
           <div class="modal-footer">
@@ -1081,7 +1095,7 @@
                 <i class="fab fa-whatsapp me-2"></i>Quero Garantir Agora
               </a>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </div>
@@ -1413,4 +1427,4 @@
         })();
     </script>
 </body>
-        </html>
+</html>
