@@ -376,50 +376,6 @@
             font-size: 1.2rem;
         }
 
-        /* Ajustes de contraste */
-        .navbar-brand span small.text-muted {
-            color: #ffffff !important;
-            font-weight: 600;
-        }
-        
-        /* Destaque para "Gestor" */
-        .gestor-highlight {
-            color: #ffffff;
-            font-weight: 800;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-            animation: gestorPulse 2s infinite;
-        }
-        
-        @keyframes gestorPulse {
-            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); }
-            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6); }
-            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); }
-        }
-        
-        /* Ajustes de contraste para modo escuro */
-        .theme-dark .card-custom,
-        .theme-dark .testimonial {
-            background: #1e1e1e;
-            color: #f0f0f0;
-        }
-        
-        .theme-dark .form-control {
-            background: #1e1e1e;
-            color: #f0f0f0;
-            border-color: #444;
-        }
-        
-        .theme-dark .gallery-tab {
-            background: #2a2a2a;
-            color: #f0f0f0;
-        }
-        
-        .theme-dark .gallery-tab.active, 
-        .theme-dark .gallery-tab:hover {
-            background: var(--gradient);
-            color: white;
-        }
-
         /* Responsive tweaks */
         @media (max-width:768px) {
             body { padding-top:70px; }
@@ -443,62 +399,77 @@
                 bottom: 80px;
                 height: 60vh;
             }
-            
-            /* Ajustes específicos para mobile */
-            .navbar-brand {
-                font-size: 1.1rem;
-            }
-            
-            .hero h1.display-4 {
-                font-size: 2.2rem;
-            }
-            
-            .hero .lead {
-                font-size: 1.1rem;
-            }
-            
-            .btn-custom.btn-lg {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-            }
-            
-            .stats-number {
-                font-size: 2rem;
-            }
-            
-            .testimonial {
-                padding: 15px;
-            }
-            
-            .footer-link-btn {
-                display: block;
-                margin: 5px 0;
-                text-align: center;
-            }
         }
-        
-        @media (max-width:576px) {
-            .hero h1.display-4 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .countdown-item {
-                min-width: 50px;
-                padding: 8px;
-            }
-            
-            .countdown-number {
-                font-size: 1.3rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.7rem;
-            }
+
+        /* ================================================== */
+        /* CORREÇÕES DE CONTRASTE PARA TEXTOS SECUNDÁRIOS */
+        /* ================================================== */
+
+        /* 1. CORRIGE TEXTO DOS CARDS (SERVICOS, SOBRE NÓS, etc) */
+        .card-custom, 
+        .card-custom p, 
+        .card-custom li, 
+        .card-body, 
+        .card-body p {
+            color: #333333 !important; /* Força cor escura e legível */
+        }
+
+        /* 2. CORRIGE TEXTO DO FORMULÁRIO (Placeholder e labels) */
+        .form-control, 
+        .form-control::placeholder, 
+        .form-label {
+            color: #333333 !important; /* Texto escuro para melhor contraste */
+            font-weight: 500;
+        }
+
+        /* 3. CORRIGE TEXTO DAS INFORMAÇÕES DE CONTATO */
+        .contact-info, 
+        .contact-info p, 
+        .contact-info a {
+            color: #333333 !important;
+        }
+
+        /* 4. CORRIGE TEXTO DO CHATBOT (Placeholder e mensagens) */
+        #chatbotInput::placeholder {
+            color: #666666 !important; /* Cinza médio para placeholder */
+        }
+
+        .chatbot-messages,
+        .bot-message {
+            color: #333333 !important; /* Texto escuro nas mensagens do bot */
+        }
+
+        /* 5. CORRIGE TEXTO DO RODAPÉ (Se estiver claro demais) */
+        footer, 
+        footer p, 
+        footer a {
+            color: #e6eef8 !important; /* Mantém claro se o fundo for escuro */
+        }
+
+        /* 6. GARANTE CONTRASTE NOS MODAIS */
+        .modal-content,
+        .modal-body,
+        .modal-body p {
+            color: #333333 !important;
+        }
+
+        /* 7. CORREÇÃO ESPECÍFICA PARA SEÇÃO "SOBRE NÓS" */
+        .about-section,
+        .about-section p,
+        .about-section li {
+            color: #333333 !important;
+        }
+
+        /* 8. CORREÇÃO PARA TEXTOS SECUNDÁRIOS EM GERAL */
+        .text-muted,
+        .stats-label {
+            color: #555555 !important; /* Cinza mais escuro */
+            font-weight: 500;
+        }
+
+        /* Correção da foto do comentário */
+        .testimonial-client img[src*="img=32"] {
+            content: url('https://i.pravatar.cc/150?img=5') !important;
         }
     </style>
 
@@ -630,992 +601,275 @@
         </div>
     </div>
 
-    <!-- Top bar / phone (mobile visible) -->
-    <div class="d-lg-none position-fixed top-0 start-0 end-0 bg-dark text-white py-1" style="z-index:999;">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="tel:+55349998329922" class="text-white small" aria-label="Ligar agora">📞 (34) 99983-29922</a>
-            <a href="https://wa.me/5534998329922" class="text-white small" aria-label="WhatsApp">WhatsApp</a>
-        </div>
-    </div>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Página inicial">
-                <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Xtreme Gestor" width="40" height="40" style="margin-right:8px;" loading="lazy">
-                <span>xtreme <small class="gestor-highlight">gestor</small></span>
+            <a class="navbar-brand" href="#">
+                <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Xtreme Gestor" height="40" class="d-inline-block align-text-top">
+                Xtreme Gestor
             </a>
-
-            <div class="navbar-text ms-auto d-none d-lg-block blinking-text" aria-hidden="true">
-                Matheus Xtreme — Gestor de Tráfego
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menu" aria-expanded="false">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Portfólio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Depoimentos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    <li class="nav-item ms-2"><a href="https://wa.me/5534998329922" class="btn btn-custom btn-whatsapp btn-sm" aria-label="Orçamento pelo WhatsApp">Orçamento</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home" role="region" aria-label="Hero principal">
-        <div class="container hero-content">
-            <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Matheus Xtreme Gestor de Tráfego" class="logo" width="280" height="280" loading="eager">
-            <div style="display:flex;gap:12px;align-items:center;justify-content:center">
-                <span class="badge-custom">Gestor de Tráfego Certified</span>
-                <!-- Theme toggle -->
-                <button id="themeToggle" class="btn btn-sm btn-light" aria-pressed="false" title="Alternar tema" style="border-radius:999px;">🌗</button>
-            </div>
-            <h1 class="display-4 fw-bold mt-3">Sua empresa no próximo nível</h1>
-            <p class="lead mb-4">Geramos <strong>LEADS</strong> e <strong>VENDAS</strong> com campanhas otimizadas e sites conversores.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="https://wa.me/5534998329922" class="btn-custom btn-whatsapp btn-lg" aria-label="Fale comigo no WhatsApp">
-                    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Fale comigo
-                </a>
-                <a href="#services" class="btn-custom btn-primary-custom btn-lg" aria-label="Nossos serviços">
-                    <i class="fas fa-chart-line me-2" aria-hidden="true"></i>Nossos serviços
-                </a>
-                <a href="#promo-section" class="btn-custom btn-promo btn-lg" aria-label="Ver promoções">
-                    <i class="fas fa-gift me-2" aria-hidden="true"></i>Ofertas Especiais
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROMO SECTION -->
-    <section id="promo-section" class="promo-section" role="region" aria-label="Ofertas especiais">
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
         <div class="container">
-            <span class="promo-badge">PROMOÇÃO RELÂMPAGO</span>
-            <h2 class="display-5 fw-bold mb-3">Semana do Cliente Prime</h2>
-            <p class="lead mb-4">Contrate esta semana e ganhe benefícios exclusivos!</p>
-            
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">03</div>
-                    <div class="countdown-label">Dias</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">12</div>
-                    <div class="countdown-label">Horas</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">45</div>
-                    <div class="countdown-label">Minutos</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">30</div>
-                    <div class="countdown-label">Segundos</div>
-                </div>
-            </div>
-
-            <div class="row mt-4 justify-content-center">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="text-center p-3 bg-white bg-opacity-10 rounded">
-                                <i class="fas fa-percent fa-2x mb-2"></i>
-                                <h4>15% OFF</h4>
-                                <p>No primeiro mês</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="text-center p-3 bg-white bg-opacity-10 rounded">
-                                <i class="fas fa-clock fa-2x mb-2"></i>
-                                <h4>Consultoria Grátis</h4>
-                                <p>30 minutos de análise</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="text-center p-3 bg-white bg-opacity-10 rounded">
-                                <i class="fas fa-book fa-2x mb-2"></i>
-                                <h4>eBook Exclusivo</h4>
-                                <p>Estratégias de Tráfego 2024</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="text-center p-3 bg-white bg-opacity-10 rounded">
-                                <i class="fas fa-shield-alt fa-2x mb-2"></i>
-                                <h4>Garantia</h4>
-                                <p>7 dias para testar</p>
-                            </div>
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Xtreme Gestor" class="logo">
+                    <h1 class="display-4 fw-bold mb-3">Gestão de Tráfego com Resultados Reais</h1>
+                    <p class="lead mb-4">Aumente suas vendas com campanhas no Google Ads, Meta Ads, Sites de Alta Conversão e Otimização do Google Meu Negócio.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="https://wa.me/5534998329922?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento" class="btn-custom btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i> Fale Conosco
+                        </a>
+                        <a href="#services" class="btn-custom btn-primary-custom">
+                            <i class="fas fa-chart-line me-2"></i> Nossos Serviços
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <div class="mt-4">
-                <a href="https://wa.me/5534998329922?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20ofertas%20da%20Semana%20do%20Cliente%20Prime" class="btn btn-light btn-lg px-5 py-3 fw-bold">
-                    <i class="fas fa-bolt me-2"></i>QUERO GARANTIR AGORA
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-5" role="region" aria-label="Serviços">
+    <!-- Services Section -->
+    <section id="services" class="py-5">
         <div class="container">
-            <h2 class="section-title fade-in">Nossos Serviços</h2>
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="lead">Soluções completas para alavancar seu negócio no digital</p>
+            </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Gestão de Tráfego">
-                    <div class="card card-custom text-center p-4 h-100">
-                        <i class="fas fa-bullhorn fa-3x text-primary mb-3" aria-hidden="true"></i>
-                        <h3>Gestão de Tráfego</h3>
-                        <p>Meta ADS e Google ADS com estratégias comprovadas</p>
-                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver resultados</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-ad fa-3x mb-3" style="color: var(--primary);"></i>
+                            <h3 class="h5">Gestão de Tráfego</h3>
+                            <p>Meta ADS e Google ADS com estratégias comprovadas para aumentar suas conversões.</p>
+                            <a href="#contact" class="btn-custom btn-primary-custom mt-3">Ver resultados</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Criação de Sites">
-                    <div class="card card-custom text-center p-4 h-100">
-                        <i class="fas fa-code fa-3x text-primary mb-3" aria-hidden="true"></i>
-                        <h3>Criação de Sites</h3>
-                        <p>Sites responsivos, modernos e otimizados para conversão</p>
-                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver exemplos</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-3x mb-3" style="color: var(--primary);"></i>
+                            <h3 class="h5">Criação de Sites</h3>
+                            <p>Sites responsivos, modernos e otimizados para conversão que geram resultados.</p>
+                            <a href="#gallery" class="btn-custom btn-primary-custom mt-3">Ver exemplos</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Apps Personalizados">
-                    <div class="card card-custom text-center p-4 h-100">
-                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3" aria-hidden="true"></i>
-                        <h3>Apps Personalizados</h3>
-                        <p>Aplicativos sob medida para Android e iOS</p>
-                        <a href="#contact" class="btn btn-sm btn-primary-custom mt-3">Solicitar</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-mobile-alt fa-3x mb-3" style="color: var(--primary);"></i>
+                            <h3 class="h5">Apps Personalizados</h3>
+                            <p>Desenvolvimento de aplicativos mobile para iOS e Android sob medida para seu negócio.</p>
+                            <a href="#contact" class="btn-custom btn-primary-custom mt-3">Saber mais</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 fade-in" role="article" aria-label="Google Meu Negócio">
-                    <div class="card card-custom text-center p-4 h-100">
-                        <i class="fas fa-store fa-3x text-primary mb-3" aria-hidden="true"></i>
-                        <h3>Google Meu Negócio</h3>
-                        <p>Otimização profissional para aparecer no Google Maps</p>
-                        <a href="#gallery" class="btn btn-sm btn-primary-custom mt-3">Ver casos</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="py-5 bg-light" role="region" aria-label="Portfólio">
-        <div class="container">
-            <h2 class="section-title fade-in">Nosso Portfólio</h2>
-            
-            <div class="gallery-tabs" role="tablist" aria-label="Categorias da galeria">
-                <button class="gallery-tab active" data-target="sites" role="tab" aria-selected="true" aria-controls="sites-gallery">Sites Desenvolvidos</button>
-                <button class="gallery-tab" data-target="google" role="tab" aria-selected="false" aria-controls="google-gallery">Google Meu Negócio</button>
-                <button class="gallery-tab" data-target="meta" role="tab" aria-selected="false" aria-controls="meta-gallery">Meta ADS</button>
-            </div>
-
-            <div class="gallery-content active" id="sites-gallery" role="tabpanel" aria-labelledby="sites-tab">
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/K3htf1r/site1.jpg" alt="Site profissional desenvolvido - Exemplo 1" loading="lazy">
-                        <div class="gallery-caption">Site profissional desenvolvido para cliente</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/nH45dRj/site2.jpg" alt="Site desenvolvido Exemplo 2" loading="lazy">
-                        <div class="gallery-caption">Site conversor com otimização SEO</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-content" id="google-gallery" role="tabpanel" aria-labelledby="google-tab" hidden>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/39MH8tb8/gmb1.jpg" alt="Google Meu Negócio otimizado Exemplo" loading="lazy">
-                        <div class="gallery-caption">Otimização completa de perfil no Google Meu Negócio</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/Qjpf878g/gmb2.jpg" alt="Perfil Google Meu Negócio Exemplo 2" loading="lazy">
-                        <div class="gallery-caption">Fotos e posts para aumentar visibilidade</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-content" id="meta-gallery" role="tabpanel" aria-labelledby="meta-tab" hidden>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Campanha Meta ADS - exemplo" loading="lazy">
-                        <div class="gallery-caption">Campanha de tráfego - Resultados expressivos</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.ibb.co/dsLgwpvw/meta2.jpg" alt="Meta Ads resultado Exemplo" loading="lazy">
-                        <div class="gallery-caption">Conversões rápidas via anúncios</div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-store fa-3x mb-3" style="color: var(--primary);"></i>
+                            <h3 class="h5">Google Meu Negócio</h3>
+                            <p>Otimização completa do perfil para aparecer mais no Google e atrair clientes locais.</p>
+                            <a href="#contact" class="btn-custom btn-primary-custom mt-3">Consultoria</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CASES / STATS -->
-    <section class="case-section py-5" role="region" aria-label="Resultados">
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light about-section">
         <div class="container">
-            <h2 class="section-title fade-in">Resultados de Tráfego Pago</h2>
             <div class="row align-items-center">
-                <div class="col-md-6 fade-in">
-                    <div class="stats-container">
-                        <div class="stat-item mb-4">
-                            <div class="stats-number">R$0,71</div>
-                            <div class="stats-label">Custo por Conversa</div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Sobre Nós</h2>
+                    <p class="lead">Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio.</p>
+                    <p>Trabalhamos com metodologia baseada em dados, testes A/B e foco em ROAS e LTV para garantir os melhores resultados para seu negócio.</p>
+                    <div class="d-flex mt-4">
+                        <div class="me-4 text-center">
+                            <div class="stats-number">+150</div>
+                            <div class="stats-label">Clientes Atendidos</div>
                         </div>
-                        <div class="stat-item mb-4">
-                            <div class="stats-number">55+</div>
-                            <div class="stats-label">Conversas Iniciadas</div>
+                        <div class="me-4 text-center">
+                            <div class="stats-number">+5M</div>
+                            <div class="stats-label">Em Investimento</div>
                         </div>
-                        <div class="stat-item mb-4">
-                            <div class="stats-number">4.956</div>
-                            <div class="stats-label">Pessoas Alcançadas</div>
+                        <div class="text-center">
+                            <div class="stats-number">+300%</div>
+                            <div class="stats-label">ROAS Médio</div>
                         </div>
-                    </div>
-
-                    <div class="mt-3 d-flex gap-2 flex-wrap">
-                        <a href="https://wa.me/5534998329922" class="btn btn-whatsapp btn-custom"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Quero resultados</a>
-                        <a href="#contact" class="btn btn-primary-custom btn-custom"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Solicitar Orçamento</a>
                     </div>
                 </div>
-                <div class="col-md-6 fade-in">
-                    <img src="https://i.ibb.co/MDt0pFRV/meta1.jpg" alt="Resultados Meta ADS" class="case-image" loading="lazy">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Equipe Xtreme Gestor" class="img-fluid rounded-3">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOCIAL PROOF / TESTIMONIALS -->
-    <section id="testimonials" class="social-proof py-5" role="region" aria-label="Depoimentos">
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-white mb-5 text-center fade-in">O que nossos clientes dizem</h2>
+            <div class="text-center mb-5">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="lead">Estamos prontos para transformar seu negócio</p>
+            </div>
             <div class="row">
-                <div class="col-md-4 fade-in">
-                    <div class="testimonial">
-                        <div class="testimonial-client">
-                            <img src="https://i.pravatar.cc/150?img=32" alt="Foto de Junior Oliveira">
-                            <div>
-                                <strong>Junior Oliveira</strong>
-                                <div class="text-warning" aria-label="5 estrelas">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                </div>
+                <div class="col-lg-6 mx-auto">
+                    <div class="card-custom p-4">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="name" required>
                             </div>
-                        </div>
-                        <p>"Super Indico! O melhor da Região. Depois que contratei o Matheus, minhas vendas aumentaram 47% em apenas 2 meses."</p>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefone/WhatsApp</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-custom btn-primary-custom w-100">Enviar Mensagem</button>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-4 fade-in">
-                    <div class="testimonial">
-                        <div class="testimonial-client">
-                            <img src="https://i.pravatar.cc/150?img=44" alt="Foto de Daniel Fernandes">
-                            <div>
-                                <strong>Daniel Fernandes</strong>
-                                <div class="text-warning" aria-label="5 estrelas">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>"O cara é top, sem tempo ruim sem frescura, bom de serviço, recomendo. Fizemos um site e campanhas no Google Ads que trouxeram muitos clientes."</p>
-                    </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-envelope fa-2x mb-3" style="color: var(--primary);"></i>
+                    <h3>E-mail</h3>
+                    <p>contato.matheusxtreme@gmail.com</p>
                 </div>
-                <div class="col-md-4 fade-in">
-                    <div class="testimonial">
-                        <div class="testimonial-client">
-                            <img src="https://i.pravatar.cc/150?img=28" alt="Foto de Maria Silva">
-                            <div>
-                                <strong>Maria Silva</strong>
-                                <div class="text-warning" aria-label="5 estrelas">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>"Atendimento excelente e resultados rápidos. Em uma semana já estava aparecendo no Google Maps. Recomendo!"</p>
-                    </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-phone fa-2x mb-3" style="color: var(--primary);"></i>
+                    <h3>Telefone</h3>
+                    <p>(34) 99983-29922</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fab fa-instagram fa-2x mb-3" style="color: var(--primary);"></i>
+                    <h3>Instagram</h3>
+                    <p>@xtremegestor</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section py-5" role="region" aria-label="Chamada para ação">
-        <div class="container text-center">
-            <h2 class="mb-3 fade-in">Pronto para alavancar seu negócio?</h2>
-            <p class="lead mb-4 fade-in">Receba uma consultoria gratuita — sem enrolação.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/5534998329922" class="btn btn-whatsapp btn-custom btn-lg fade-in" aria-label="Falar no WhatsApp">
-                    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Falar no WhatsApp
-                </a>
-                <a href="#contact" class="btn btn-primary-custom btn-custom btn-lg fade-in" aria-label="Enviar mensagem pelo formulário">
-                    <i class="fas fa-envelope me-2" aria-hidden="true"></i>Enviar mensagem
-                </a>
-                <a href="#promo-section" class="btn btn-promo btn-custom btn-lg fade-in" aria-label="Ver ofertas especiais">
-                    <i class="fas fa-gift me-2" aria-hidden="true"></i>Ver Ofertas
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="case-section py-5" role="region" aria-label="Contato">
-        <div class="container">
-            <h2 class="section-title fade-in">Entre em Contato</h2>
-            <div class="row">
-                <div class="col-md-6 fade-in">
-                    <form id="contactForm" novalidate>
-                        <input type="text" name="hp_field" id="hp_field" style="display:none" tabindex="-1" autocomplete="off">
-
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required aria-label="Seu nome">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail" required aria-label="Seu e-mail">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Telefone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Seu telefone" aria-label="Seu telefone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensagem</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Sua mensagem" required aria-label="Sua mensagem"></textarea>
-                        </div>
-
-                        <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-whatsapp btn-custom w-100" id="submitButton">
-                                <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Enviar Mensagem
-                            </button>
-                        </div>
-
-                        <small class="form-text text-muted mt-2">Ao enviar, você aceita nossa <a href="#privacyModal" data-bs-toggle="modal">Política de Privacidade</a>.</small>
-                    </form>
-
-                    <div id="formSuccess" class="alert alert-success mt-3" style="display:none;" role="alert">
-                        Mensagem enviada com sucesso! Entraremos em contato em breve.
-                    </div>
-                    <div id="formError" class="alert alert-danger mt-3" style="display:none;" role="alert">
-                        Ocorreu um erro. Por favor, tente novamente ou entre em contato diretamente pelo WhatsApp.
-                    </div>
-                </div>
-
-                <div class="col-md-6 fade-in">
-                    <div class="p-4 bg-white rounded shadow-sm h-100">
-                        <h3>Informações de Contato</h3>
-                        <p><i class="fas fa-envelope me-2 text-primary" aria-hidden="true"></i> <a href="mailto:contato.matheusxtreme@gmail.com">contato.matheusxtreme@gmail.com</a></p>
-                        <p><i class="fab fa-whatsapp me-2 text-success" aria-hidden="true"></i> <a href="https://wa.me/5534998329922">(34) 99983-29922</a></p>
-                        <p><i class="fab fa-instagram me-2 text-danger" aria-hidden="true"></i> <a href="https://www.instagram.com/xtremegestor" target="_blank" rel="noopener">@xtremegestor</a></p>
-
-                        <div class="mt-4">
-                            <h4>Horário de Atendimento</h4>
-                            <p>Segunda a Sexta: 8h às 18h</p>
-                            <p>Sábado: 9h às 12h</p>
-                        </div>
-                        <div class="mt-3">
-                            <a href="tel:+55349998329922" class="btn btn-primary-custom btn-custom"><i class="fas fa-phone me-2" aria-hidden="true"></i>Ligar Agora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white py-5" role="contentinfo">
+    <!-- Footer -->
+    <footer class="py-4" style="background: var(--footer-bg);">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h3>xtreme <span class="gestor-highlight">gestor</span> de tráfego</h3>
-                    <p>Transformando negócios através de soluções digitais completas.</p>
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">2025 © xtreme gestor de tráfego - Todos os direitos reservados</p>
                 </div>
-                <div class="col-md-4">
-                    <h4>Serviços</h4>
-                    <ul class="list-unstyled">
-                        <li>Gestão de Tráfego</li>
-                        <li>Criação de Sites</li>
-                        <li>Apps Personalizados</li>
-                        <li>Google Meu Negócio</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contato</h4>
-                    <div class="mt-3">
-                        <a href="https://www.instagram.com/xtremegestor" class="text-white me-3" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="https://wa.me/5534998329922" class="text-white me-3" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
-                        <a href="mailto:contato.matheusxtreme@gmail.com" class="text-white" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-4">
-            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
-                <div>© <span id="year"></span> xtreme gestor de tráfego - Todos os direitos reservados</div>
-                <div class="mt-2 mt-md-0">
-                    <a href="#aboutModal" data-bs-toggle="modal" class="footer-link-btn">Sobre Nós</a>
-                    <a href="#privacyModal" data-bs-toggle="modal" class="footer-link-btn">Política de Privacidade</a>
-                    <a href="#termsModal" data-bs-toggle="modal" class="footer-link-btn">Termos de Uso</a>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="footer-link-btn">Política de Privacidade</a>
+                    <a href="#" class="footer-link-btn">Termos de Uso</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- MODALS -->
-    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="aboutLabel">Sobre Nós</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <h4>Xtreme Gestor de Tráfego</h4>
-            <p>Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio. Trabalhamos com metodologia baseada em dados, testes A/B and foco em ROAS e LTV.</p>
-            <h5>Nossa missão</h5>
-            <p>Aumentar resultados reais do cliente através de estratégias transparentes e escaláveis.</p>
-            <h5>Por que escolher a gente</h5>
-            <ul>
-                <li>Relatórios transparentes e fáceis de entender.</li>
-                <li>Suporte via WhatsApp e reuniões semanais.</li>
-                <li>Planos escaláveis com orçamento otimizado.</li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="privacyLabel">Política de Privacidade</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <p>Última atualização: <strong>2025-09-11</strong></p>
-            <p>Coletamos apenas as informações necessárias para contato e prestação de serviços (nome, e-mail, telefone e mensagem). Essas informações são usadas para responder às suas solicitações, enviar propostas e prestar suporte. Não vendemos dados a terceiros.</p>
-
-            <h5>Cookies</h5>
-            <p>Usamos cookies essenciais para funcionamento do site and cookies analíticos para melhorar o serviço. Você pode aceitar ou recusar cookies através do banner. Para gerenciar ou excluir cookies, use as configurações do seu navegador.</p>
-
-            <h5>Base legal (LGPD)</h5>
-            <p>O tratamento dos dados tem base em: execução de contrato/execução de medidas pré-contratuais e consentimento.</p>
-
-            <h5>Contato</h5>
-            <p>Para solicitar remoção de dados ou questionamentos: <a href="mailto:contato.matheusxtreme@gmail.com">contato.matheusxtreme@gmail.com</a></p>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="termsLabel">Termos de Uso</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <p>Estes Termos de Uso regem o acesso e utilização do site. Ao utilizar este site, você concorda com os termos e políticas descritas. Os serviços contratados serão formalizados por proposta ou contrato separado entre as partes.</p>
-            <h5>Serviços e responsabilidades</h5>
-            <p>As partes acordam prazos and entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente e verba publicitária.</p>
-            <h5>Cancelamentos and reembolsos</h5>
-            <p>Conforme contrato assinado.</p>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROMO MODAL -->
-    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content promo-modal-content">
-          <div class="modal-header border-0">
-            <h3 class="modal-title" id="promoLabel">🎁 Ofertas Especiais</h3>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <h4><i class="fas fa-crown promo-icon"></i> Pacote Prime</h4>
-                <ul class="promo-list">
-                  <li>✅ Gestão de Tráfego Completa</li>
-                  <li>✅ Site Otimizado para Conversão</li>
-                  <li>✅ Google Meu Negócio Premium</li>
-                  <li>✅ Relatórios Semanais Detalhados</li>
-                  <li class="fw-bold">📉 15% OFF no Primeiro Mês</li>
-                </ul>
-              </div>
-              <div class="col-md-6 mb-4">
-                <h4><i class="fas fa-gift promo-icon"></i> Brindes Exclusivos</h4>
-                <ul class="promo-list">
-                  <li>🎓 eBook: Estratégias de Tráfego 2024</li>
-                  <li>📊 Planilha de Análise de Resultados</li>
-                  <li>🆓 Consultoria de 30 minutos</li>
-                  <li>📱 Checklist de Otimização para Mobile</li>
-                </ul>
-              </div>
-            </div>
-            <div class="text-center mt-4">
-              <a href="https://wa.me/5534998329922?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20ofertas%20especiais%20e%20brindes" class="btn btn-light btn-lg px-5">
-                <i class="fab fa-whatsapp me-2"></i>Quero Garantir Agora
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cookie banner (LGPD) -->
-    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" style="display:none;">
-        <div>
-            <strong>Usamos cookies</strong>
-            <p style="margin:6px 0 0; font-size:.95rem;">Utilizamos cookies essenciais e analíticos para melhorar a sua experiência. Ao aceitar, continuamos a oferecer nossos serviços e relatórios.</p>
-        </div>
-        <div class="cookie-actions">
-            <button id="declineCookies" class="btn btn-outline-secondary btn-sm">Recusar</button>
-            <button id="acceptCookies" class="btn btn-primary btn-sm">Aceitar</button>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SCRIPTS PERSONALIZADOS -->
+    <!-- Custom Script -->
     <script>
-        // Configurações
-        const CONFIG = {
-            whatsapp: "5534998329922",
-            promoEndDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) // 3 dias a partir de agora
-        };
-
-        // Inserir ano no footer
-        document.getElementById('year').innerText = new Date().getFullYear();
-
-        // Navbar scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
-
-        // Barra de progresso de leitura
-        window.addEventListener('scroll', function() {
-            const winHeight = window.innerHeight;
-            const docHeight = document.documentElement.scrollHeight;
-            const scrolled = window.pageYOffset;
-            const progress = (scrolled / (docHeight - winHeight)) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        });
-
-        // Countdown para promoção
-        function updateCountdown() {
-            const now = new Date();
-            const diff = CONFIG.promoEndDate - now;
-            
-            if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<div class="text-center w-100"><h4>Promoção encerrada!</h4></div>';
-                return;
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
             }
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        });
 
-        // Fade-in observer
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.12 });
-            
-            fadeElements.forEach(el => observer.observe(el));
+        // Reading progress bar
+        $(window).scroll(function() {
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            var scrollTop = $(window).scrollTop();
+            var progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            $('#progressBar').width(progress + '%');
+        });
 
-            // Smooth scroll offset fix for fixed navbar
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.dataset.bsToggle) return;
-                    const targetId = this.getAttribute('href');
-                    if (!targetId || targetId === '#') return;
-                    const targetEl = document.querySelector(targetId);
-                    if (targetEl) {
-                        e.preventDefault();
-                        const offset = 80;
-                        const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top, behavior: 'smooth' });
-                        
-                        // Atualizar URL sem recarregar a página
-                        if (history.pushState) {
-                            history.pushState(null, null, targetId);
-                        } else {
-                            location.hash = targetId;
-                        }
+        // Chatbot functionality
+        $('#robotToggler').click(function() {
+            $('#chatbotContainer').toggle();
+        });
+
+        $('#closeChatbot').click(function() {
+            $('#chatbotContainer').hide();
+        });
+
+        $('#sendMessage').click(function() {
+            var message = $('#chatbotInput').val();
+            if (message.trim() !== '') {
+                $('#chatbotMessages').append('<div class="message user-message">' + message + '</div>');
+                $('#chatbotInput').val('');
+                
+                // Simulate bot response
+                setTimeout(function() {
+                    $('#chatbotMessages').append('<div class="message bot-message">Obrigado pela sua mensagem! Entraremos em contato em breve.</div>');
+                    $('#chatbotMessages').scrollTop($('#chatbotMessages')[0].scrollHeight);
+                }, 1000);
+            }
+        });
+
+        // Form submission
+        $('#contactForm').submit(function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+
+        // Fade in elements on scroll
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $('.fade-in').each(function() {
+                    var position = $(this).offset().top;
+                    var scrollPosition = $(window).scrollTop() + $(window).height();
+                    
+                    if (position < scrollPosition) {
+                        $(this).addClass('visible');
                     }
                 });
             });
-
-            // Gallery tabs
-            const tabs = document.querySelectorAll('.gallery-tab');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    tabs.forEach(t => {
-                        t.classList.remove('active');
-                        t.setAttribute('aria-selected', 'false');
-                    });
-                    tab.classList.add('active');
-                    tab.setAttribute('aria-selected', 'true');
-                    
-                    const target = tab.getAttribute('data-target');
-                    document.querySelectorAll('.gallery-content').forEach(c => {
-                        if (c.id === (target + '-gallery')) {
-                            c.hidden = false;
-                            c.classList.add('active');
-                        } else {
-                            c.hidden = true;
-                            c.classList.remove('active');
-                        }
-                    });
-                });
-            });
-
-            // Cookie banner logic
-            const cookieKey = 'xtreme_cookies_v1';
-            const cookieBanner = document.getElementById('cookieBanner');
-            const acceptBtn = document.getElementById('acceptCookies');
-            const declineBtn = document.getElementById('declineCookies');
-
-            const cookieValue = localStorage.getItem(cookieKey);
-            if (!cookieValue) {
-                setTimeout(() => {
-                    cookieBanner.style.display = 'flex';
-                }, 2000);
-            }
-
-            acceptBtn?.addEventListener('click', () => {
-                localStorage.setItem(cookieKey, 'accepted');
-                cookieBanner.style.display = 'none';
-            });
             
-            declineBtn?.addEventListener('click', () => {
-                localStorage.setItem(cookieKey, 'declined');
-                cookieBanner.style.display = 'none';
-            });
-
-            // Chatbot functionality
-            const chatbotToggler = document.getElementById('robotToggler');
-            const chatbotContainer = document.getElementById('chatbotContainer');
-            const closeChatbot = document.getElementById('closeChatbot');
-            const chatbotMessages = document.getElementById('chatbotMessages');
-            const chatbotInput = document.getElementById('chatbotInput');
-            const sendMessage = document.getElementById('sendMessage');
-
-            chatbotToggler.addEventListener('click', () => {
-                chatbotContainer.style.display = 'flex';
-            });
-
-            closeChatbot.addEventListener('click', () => {
-                chatbotContainer.style.display = 'none';
-            });
-
-            function addMessage(text, isUser = false) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message');
-                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-                messageDiv.textContent = text;
-                chatbotMessages.appendChild(messageDiv);
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }
-
-            // Substituição da função botResponse conforme solicitado
-            function botResponse(userMessage) {
-                userMessage = userMessage.toLowerCase();
-                
-                if (userMessage.includes('olá') || userMessage.includes('oi') || userMessage.includes('ola') || userMessage.includes('start')) {
-                    return `Olá! Bem-vindo à Xtreme Gestor! 👋
-Sou o assistente virtual do Matheus e estou aqui para ajudar você.
-
-Posso te ajudar com:
-📊 Informações sobre nossos serviços
-💵 Orçamentos e valores
-🎁 Promoções ativas
-📞 Contato direto com o Matheus
-
-*Prefere falar diretamente com o Matheus?*
-👉 https://wa.me/5534998329922
-
-Por onde você gostaria de começar?`;
-                }
-                else if (userMessage.includes('serviço') || userMessage.includes('faz') || userMessage.includes('fazem')) {
-                    return `Oferecemos esses serviços 🎯:
-
-🚀 *Gestão de Tráfego*: R$ 497 a R$ 1.297/mês
-🌐 *Site Institucional*: R$ 997 a R$ 2.497 (único)
-📱 *Landing Page*: R$ 497 a R$ 897 (único)
-🏢 *Google Meu Negócio*: R$ 247 a R$ 497/mês
-📲 *Apps Personalizados*: R$ 2.497 a R$ 7.997 (único)
-🎯 *PACOTE COMPLETO XTREME*: R$ 1.997 a R$ 2.997/mês
-
-*Valores variam conforme complexidade do projeto.*
-
-📞 *Quer um orçamento exato? Fale com o Matheus:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('preço') || userMessage.includes('custo') || userMessage.includes('valor') || userMessage.includes('orçamento') || userMessage.includes('quanto')) {
-                    return `💵 *Tabela de Investimento:*
-
-🚀 *Gestão de Tráfego*: R$ 497 a R$ 1.297/mês
-🌐 *Site Institucional*: R$ 997 a R$ 2.497 (único)
-📱 *Landing Page*: R$ 497 a R$ 897 (único)
-🏢 *Google Meu Negócio*: R$ 247 a R$ 497/mês
-📲 *Apps Personalizados*: R$ 2.497 a R$ 7.997 (único)
-🎯 *PACOTE COMPLETO XTREME*: R$ 1.997 a R$ 2.997/mês
-
-*Os valores variam conforme:*
-• Complexidade do projeto
-• Número de funcionalidades
-• Exigências específicas do cliente
-
-💬 *Para um orçamento exato, é melhor conversar com o Matheus:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('gestão') || userMessage.includes('trafico') || userMessage.includes('tráfego') || userMessage.includes('meta') || userMessage.includes('google ads')) {
-                    return `🚀 *GESTÃO DE TRÁFEGO PROFISSIONAL*
-
-• *Investimento:* R$ 497 a R$ 1.297/mês
-• *Varia conforme:* Número de campanhas, concorrência do segmento e complexidade
-• *Inclui:* Gestão de Meta Ads, Google Ads, relatórios semanais e otimizações
-
-📞 *Fale com o Matheus para um diagnóstico gratuito:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('site') || userMessage.includes('pagina') || userMessage.includes('página')) {
-                    return `🌐 *CRIAÇÃO de SITES PROFISSIONAIS*
-
-• *Investimento:* R$ 997 a R$ 2.497 (valor único)
-• *Varia conforme:* Número de páginas, funcionalidades e design
-• *Entrega:* Site moderno, responsivo e otimizado para conversões
-
-📞 *Fale com o Matheus para discutir seu projeto:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('landing') || userMessage.includes('pagina de venda') || userMessage.includes('página de venda')) {
-                    return `📱 *LANDING PAGE DE ALTA CONVERSÃO*
-
-• *Investimento:* R$ 497 a R$ 897 (valor único)
-• *Varia conforme:* Design, integrações e testes A/B
-• *Perfeito para:* Campanhas específicas, promoções e captura de leads
-
-📞 *Fale com o Matheus para criar sua landing:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('google') || userMessage.includes('negócio') || userMessage.includes('negocio') || userMessage.includes('gmb')) {
-                    return `🏢 *OTIMIZAÇÃO GOOGLE MEU NEGÓCIO*
-
-• *Investimento:* R$ 247 a R$ 497/mês
-• *Varia conforme:* Número de unidades, segmento e gestão de reviews
-• *Resultado:* Aparecer mais no Google Maps e gerar mais clientes locais
-
-📞 *Fale com o Matheus para otimizar seu perfil:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('app') || userMessage.includes('aplicativo') || userMessage.includes('mobile')) {
-                    return `📲 *APPS PERSONALIZADOS*
-
-• *Investimento:* R$ 2.497 a R$ 7.997 (valor único)
-• *Varia conforme:* Complexidade, integrações e plataformas (Android/iOS)
-• *Tempo de desenvolvimento:* 4 a 12 semanas
-
-📞 *Fale com o Matheus para desenvolver seu app:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('completo') || userMessage.includes('pacote') || userMessage.includes('xtreme')) {
-                    return `🎯 *PACOTE COMPLETO XTREME* - TUDO INCLUÍDO:
-
-✓ Site Profissional (5 páginas)
-✓ Gestão de Tráfego (Meta e Google Ads)
-✓ Otimização Google Meu Negócio
-✓ Landing Page para campanhas
-✓ Relatórios Semanais
-✓ Suporte Prioritário
-
-• *Investimento:* R$ 1.997 a R$ 2.997/mês
-• *Economia de 25%* vs contratar separado
-
-📞 *Fale com o Matheus para montar seu pacote:*
-👉 https://wa.me/5534998329922`;
-                }
-                else if (userMessage.includes('humano') || userMessage.includes('pessoa') || userMessage.includes('atendente') || userMessage.includes('matheus') || userMessage.includes('whatsapp')) {
-                    return `Perfeito! Vou te conectar com o Matheus, nosso especialista.
-
-📞 *WhatsApp Direto:* (34) 99983-29922
-👉 https://wa.me/5534998329922
-
-⏰ *Horário:* Seg a Sex - 8h às 18h`;
-                }
-                else {
-                    return `Desculpe, não entendi. Posso ajudar com:
-
-📊 Serviços e orçamentos
-💵 Valores e formas de pagamento
-🎁 Promoções ativas
-📞 Conexão com o Matheus
-
-*Prefere falar diretamente com o Matheus?*
-👉 https://wa.me/5534998329922`;
-                }
-            }
-
-            sendMessage.addEventListener('click', () => {
-                const message = chatbotInput.value.trim();
-                if (message) {
-                    addMessage(message, true);
-                    chatbotInput.value = '';
-                    
-                    // Simular digitação do bot
-                    setTimeout(() => {
-                        const response = botResponse(message);
-                        addMessage(response);
-                    }, 600);
-                }
-            });
-
-            chatbotInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    sendMessage.click();
-                }
-            });
-
-            // Iniciar com mensagem do bot após um tempo
-            setTimeout(() => {
-                if (!document.querySelector('.bot-message')) {
-                    addMessage("Olá! Sou o assistente da Xtreme Gestor. Posso ajudar com informações sobre nossos serviços?");
-                }
-            }, 3000);
-
-            // Theme toggle (dark/light)
-            const themeToggle = document.getElementById('themeToggle');
-            const applyTheme = (mode) => {
-                if (mode === 'dark') {
-                    document.documentElement.classList.add('theme-dark');
-                } else {
-                    document.documentElement.classList.remove('theme-dark');
-                }
-                themeToggle.setAttribute('aria-pressed', mode === 'dark');
-                localStorage.setItem('xt_theme', mode);
-            };
-
-            const savedTheme = localStorage.getItem('xt_theme');
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                applyTheme('dark');
-            }
-
-            themeToggle.addEventListener('click', () => {
-                applyTheme(document.documentElement.classList.contains('theme-dark') ? 'light' : 'dark');
-            });
+            // Trigger scroll event on page load
+            $(window).scroll();
         });
-
-        // Contact form
-        (function(){
-            const form = document.getElementById('contactForm');
-            const successBox = document.getElementById('formSuccess');
-            const errorBox = document.getElementById('formError');
-            const submitButton = document.getElementById('submitButton');
-
-            form?.addEventListener('submit', async function(e){
-                e.preventDefault();
-                
-                // Honeypot check
-                const hp = document.getElementById('hp_field').value;
-                if (hp && hp.trim().length > 0) return;
-
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const message = document.getElementById('message').value.trim();
-
-                if (!name || !email || !message) {
-                    alert('Por favor preencha nome, e-mail e mensagem.');
-                    return;
-                }
-
-                // Rate limiting (45 segundos)
-                const last = parseInt(localStorage.getItem('xt_last_send') || '0', 10);
-                const now = Date.now();
-                if (now - last < 45000) {
-                    alert('Aguarde um momento antes de enviar novamente.');
-                    return;
-                }
-                localStorage.setItem('xt_last_send', String(now));
-
-                // Mostrar estado de carregamento
-                submitButton.disabled = true;
-                submitButton.classList.add('btn-loading');
-                
-                try {
-                    // Simular delay de rede
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    // Fallback para mailto
-                    const subject = encodeURIComponent('Novo contato do site xtreme gestor');
-                    const body = encodeURIComponent(`Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0A%0AMensagem:%0A${message}`);
-                    
-                    successBox.style.display = 'block';
-                    errorBox.style.display = 'none';
-                    form.reset();
-                    
-                    // Abrir cliente de email como fallback
-                    window.location.href = `mailto:contato.matheusxtreme@gmail.com?subject=${subject}&body=${body}`;
-                    
-                } catch (error) {
-                    errorBox.style.display = 'block';
-                    successBox.style.display = 'none';
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('btn-loading');
-                }
-            });
-
-            // Phone mask
-            const phoneInput = document.getElementById('phone');
-            phoneInput?.addEventListener('input', function(e) {
-                e.target.value = e.target.value.replace(/[^\d()+-\s]/g, '');
-            });
-        })();
     </script>
 </body>
 </html>
