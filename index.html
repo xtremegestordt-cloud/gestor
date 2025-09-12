@@ -376,6 +376,50 @@
             font-size: 1.2rem;
         }
 
+        /* Ajustes de contraste */
+        .navbar-brand span small.text-muted {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+        
+        /* Destaque para "Gestor" */
+        .gestor-highlight {
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            animation: gestorPulse 2s infinite;
+        }
+        
+        @keyframes gestorPulse {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); }
+            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); }
+        }
+        
+        /* Ajustes de contraste para modo escuro */
+        .theme-dark .card-custom,
+        .theme-dark .testimonial {
+            background: #1e1e1e;
+            color: #f0f0f0;
+        }
+        
+        .theme-dark .form-control {
+            background: #1e1e1e;
+            color: #f0f0f0;
+            border-color: #444;
+        }
+        
+        .theme-dark .gallery-tab {
+            background: #2a2a2a;
+            color: #f0f0f0;
+        }
+        
+        .theme-dark .gallery-tab.active, 
+        .theme-dark .gallery-tab:hover {
+            background: var(--gradient);
+            color: white;
+        }
+
         /* Responsive tweaks */
         @media (max-width:768px) {
             body { padding-top:70px; }
@@ -398,6 +442,62 @@
                 right: 5%;
                 bottom: 80px;
                 height: 60vh;
+            }
+            
+            /* Ajustes específicos para mobile */
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            
+            .hero h1.display-4 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem;
+            }
+            
+            .btn-custom.btn-lg {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+            
+            .testimonial {
+                padding: 15px;
+            }
+            
+            .footer-link-btn {
+                display: block;
+                margin: 5px 0;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width:576px) {
+            .hero h1.display-4 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-item {
+                min-width: 50px;
+                padding: 8px;
+            }
+            
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -543,7 +643,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Página inicial">
                 <img src="https://i.ibb.co/kgS4m24K/logo.jpg" alt="Logo Xtreme Gestor" width="40" height="40" style="margin-right:8px;" loading="lazy">
-                <span>xtreme <small class="text-muted">gestor</small></span>
+                <span>xtreme <small class="gestor-highlight">gestor</small></span>
             </a>
 
             <div class="navbar-text ms-auto d-none d-lg-block blinking-text" aria-hidden="true">
@@ -937,7 +1037,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>xtreme gestor de tráfego</h3>
+                    <h3>xtreme <span class="gestor-highlight">gestor</span> de tráfego</h3>
                     <p>Transformando negócios através de soluções digitais completas.</p>
                 </div>
                 <div class="col-md-4">
@@ -981,7 +1081,7 @@
           </div>
           <div class="modal-body">
             <h4>Xtreme Gestor de Tráfego</h4>
-            <p>Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio. Trabalhamos com metodologia baseada em dados, testes A/B e foco em ROAS e LTV.</p>
+            <p>Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio. Trabalhamos com metodologia baseada em dados, testes A/B and foco em ROAS e LTV.</p>
             <h5>Nossa missão</h5>
             <p>Aumentar resultados reais do cliente através de estratégias transparentes e escaláveis.</p>
             <h5>Por que escolher a gente</h5>
@@ -1010,7 +1110,7 @@
             <p>Coletamos apenas as informações necessárias para contato e prestação de serviços (nome, e-mail, telefone e mensagem). Essas informações são usadas para responder às suas solicitações, enviar propostas e prestar suporte. Não vendemos dados a terceiros.</p>
 
             <h5>Cookies</h5>
-            <p>Usamos cookies essenciais para funcionamento do site e cookies analíticos para melhorar o serviço. Você pode aceitar ou recusar cookies através do banner. Para gerenciar ou excluir cookies, use as configurações do seu navegador.</p>
+            <p>Usamos cookies essenciais para funcionamento do site and cookies analíticos para melhorar o serviço. Você pode aceitar ou recusar cookies através do banner. Para gerenciar ou excluir cookies, use as configurações do seu navegador.</p>
 
             <h5>Base legal (LGPD)</h5>
             <p>O tratamento dos dados tem base em: execução de contrato/execução de medidas pré-contratuais e consentimento.</p>
@@ -1035,8 +1135,8 @@
           <div class="modal-body">
             <p>Estes Termos de Uso regem o acesso e utilização do site. Ao utilizar este site, você concorda com os termos e políticas descritas. Os serviços contratados serão formalizados por proposta ou contrato separado entre as partes.</p>
             <h5>Serviços e responsabilidades</h5>
-            <p>As partes acordam prazos e entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente e verba publicitária.</p>
-            <h5>Cancelamentos e reembolsos</h5>
+            <p>As partes acordam prazos and entregas em contrato específico. Não garantimos resultados exatos (ex.: % de aumento de vendas) sem análise prévia do histórico do cliente e verba publicitária.</p>
+            <h5>Cancelamentos and reembolsos</h5>
             <p>Conforme contrato assinado.</p>
           </div>
           <div class="modal-footer">
@@ -1259,37 +1359,142 @@
                 chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
             }
 
-            // Sistema de orçamentos para o bot
-            const servicePrices = {
-                'gestao': { base: 997, description: 'Gestão de Tráfego Completa' },
-                'site': { base: 2497, description: 'Site Profissional' },
-                'app': { base: 4997, description: 'App Personalizado' },
-                'google': { base: 497, description: 'Otimização Google Meu Negócio' }
-            };
-
+            // Substituição da função botResponse conforme solicitado
             function botResponse(userMessage) {
                 userMessage = userMessage.toLowerCase();
                 
-                if (userMessage.includes('olá') || userMessage.includes('oi') || userMessage.includes('ola')) {
-                    return "Olá! Bem-vindo à Xtreme Gestor. Posso ajudar com informações sobre nossos serviços, orçamentos ou a promoção especial?";
-                } else if (userMessage.includes('serviço') || userMessage.includes('faz')) {
-                    return "Oferecemos: 🎯 Gestão de Tráfego | 🌐 Criação de Sites | 📱 Apps Personalizados | 🏢 Google Meu Negócio. Qual te interessa?";
-                } else if (userMessage.includes('preço') || userMessage.includes('custo') || userMessage.includes('valor') || userMessage.includes('orçamento')) {
-                    return "Posso dar uma estimativa! Para qual serviço você gostaria de um orçamento: Gestão de Tráfego, Site, App ou Google Meu Negócio?";
-                } else if (userMessage.includes('gestão') || userMessage.includes('trafico') || userMessage.includes('tráfego')) {
-                    return `💼 ${servicePrices.gestao.description}: A partir de R$ ${servicePrices.gestao.base.toFixed(2)}/mês. Quer mais detalhes?`;
-                } else if (userMessage.includes('site') || userMessage.includes('pagina')) {
-                    return `🌐 ${servicePrices.site.description}: A partir de R$ ${servicePrices.site.base.toFixed(2)} (valor único). Quer saber mais?`;
-                } else if (userMessage.includes('app') || userMessage.includes('aplicativo')) {
-                    return `📱 ${servicePrices.app.description}: A partir de R$ ${servicePrices.app.base.toFixed(2)}. Posso explicar melhor?`;
-                } else if (userMessage.includes('google') || userMessage.includes('negócio') || userMessage.includes('negocio')) {
-                    return `🏢 ${servicePrices.google.description}: A partir de R$ ${servicePrices.google.base.toFixed(2)}/mês. Interessado?`;
-                } else if (userMessage.includes('promo') || userMessage.includes('desconto') || userMessage.includes('oferta')) {
-                    return "🎉 TEMOS PROMOÇÃO! Esta semana: 15% OFF no primeiro mês + Consultoria Grátis + eBook exclusivo! Quer garantir?";
-                } else if (userMessage.includes('contato') || userMessage.includes('falar') || userMessage.includes('whatsapp')) {
-                    return "Claro! Nosso WhatsApp é (34) 99983-29922. Você pode clicar no ícone verde para conversar diretamente!";
-                } else {
-                    return "Desculpe, não entendi. Posso ajudar com: serviços, orçamentos, promoção ou conectar você com nosso especialista. O que você precisa?";
+                if (userMessage.includes('olá') || userMessage.includes('oi') || userMessage.includes('ola') || userMessage.includes('start')) {
+                    return `Olá! Bem-vindo à Xtreme Gestor! 👋
+Sou o assistente virtual do Matheus e estou aqui para ajudar você.
+
+Posso te ajudar com:
+📊 Informações sobre nossos serviços
+💵 Orçamentos e valores
+🎁 Promoções ativas
+📞 Contato direto com o Matheus
+
+*Prefere falar diretamente com o Matheus?*
+👉 https://wa.me/5534998329922
+
+Por onde você gostaria de começar?`;
+                }
+                else if (userMessage.includes('serviço') || userMessage.includes('faz') || userMessage.includes('fazem')) {
+                    return `Oferecemos esses serviços 🎯:
+
+🚀 *Gestão de Tráfego*: R$ 497 a R$ 1.297/mês
+🌐 *Site Institucional*: R$ 997 a R$ 2.497 (único)
+📱 *Landing Page*: R$ 497 a R$ 897 (único)
+🏢 *Google Meu Negócio*: R$ 247 a R$ 497/mês
+📲 *Apps Personalizados*: R$ 2.497 a R$ 7.997 (único)
+🎯 *PACOTE COMPLETO XTREME*: R$ 1.997 a R$ 2.997/mês
+
+*Valores variam conforme complexidade do projeto.*
+
+📞 *Quer um orçamento exato? Fale com o Matheus:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('preço') || userMessage.includes('custo') || userMessage.includes('valor') || userMessage.includes('orçamento') || userMessage.includes('quanto')) {
+                    return `💵 *Tabela de Investimento:*
+
+🚀 *Gestão de Tráfego*: R$ 497 a R$ 1.297/mês
+🌐 *Site Institucional*: R$ 997 a R$ 2.497 (único)
+📱 *Landing Page*: R$ 497 a R$ 897 (único)
+🏢 *Google Meu Negócio*: R$ 247 a R$ 497/mês
+📲 *Apps Personalizados*: R$ 2.497 a R$ 7.997 (único)
+🎯 *PACOTE COMPLETO XTREME*: R$ 1.997 a R$ 2.997/mês
+
+*Os valores variam conforme:*
+• Complexidade do projeto
+• Número de funcionalidades
+• Exigências específicas do cliente
+
+💬 *Para um orçamento exato, é melhor conversar com o Matheus:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('gestão') || userMessage.includes('trafico') || userMessage.includes('tráfego') || userMessage.includes('meta') || userMessage.includes('google ads')) {
+                    return `🚀 *GESTÃO DE TRÁFEGO PROFISSIONAL*
+
+• *Investimento:* R$ 497 a R$ 1.297/mês
+• *Varia conforme:* Número de campanhas, concorrência do segmento e complexidade
+• *Inclui:* Gestão de Meta Ads, Google Ads, relatórios semanais e otimizações
+
+📞 *Fale com o Matheus para um diagnóstico gratuito:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('site') || userMessage.includes('pagina') || userMessage.includes('página')) {
+                    return `🌐 *CRIAÇÃO de SITES PROFISSIONAIS*
+
+• *Investimento:* R$ 997 a R$ 2.497 (valor único)
+• *Varia conforme:* Número de páginas, funcionalidades e design
+• *Entrega:* Site moderno, responsivo e otimizado para conversões
+
+📞 *Fale com o Matheus para discutir seu projeto:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('landing') || userMessage.includes('pagina de venda') || userMessage.includes('página de venda')) {
+                    return `📱 *LANDING PAGE DE ALTA CONVERSÃO*
+
+• *Investimento:* R$ 497 a R$ 897 (valor único)
+• *Varia conforme:* Design, integrações e testes A/B
+• *Perfeito para:* Campanhas específicas, promoções e captura de leads
+
+📞 *Fale com o Matheus para criar sua landing:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('google') || userMessage.includes('negócio') || userMessage.includes('negocio') || userMessage.includes('gmb')) {
+                    return `🏢 *OTIMIZAÇÃO GOOGLE MEU NEGÓCIO*
+
+• *Investimento:* R$ 247 a R$ 497/mês
+• *Varia conforme:* Número de unidades, segmento e gestão de reviews
+• *Resultado:* Aparecer mais no Google Maps e gerar mais clientes locais
+
+📞 *Fale com o Matheus para otimizar seu perfil:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('app') || userMessage.includes('aplicativo') || userMessage.includes('mobile')) {
+                    return `📲 *APPS PERSONALIZADOS*
+
+• *Investimento:* R$ 2.497 a R$ 7.997 (valor único)
+• *Varia conforme:* Complexidade, integrações e plataformas (Android/iOS)
+• *Tempo de desenvolvimento:* 4 a 12 semanas
+
+📞 *Fale com o Matheus para desenvolver seu app:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('completo') || userMessage.includes('pacote') || userMessage.includes('xtreme')) {
+                    return `🎯 *PACOTE COMPLETO XTREME* - TUDO INCLUÍDO:
+
+✓ Site Profissional (5 páginas)
+✓ Gestão de Tráfego (Meta e Google Ads)
+✓ Otimização Google Meu Negócio
+✓ Landing Page para campanhas
+✓ Relatórios Semanais
+✓ Suporte Prioritário
+
+• *Investimento:* R$ 1.997 a R$ 2.997/mês
+• *Economia de 25%* vs contratar separado
+
+📞 *Fale com o Matheus para montar seu pacote:*
+👉 https://wa.me/5534998329922`;
+                }
+                else if (userMessage.includes('humano') || userMessage.includes('pessoa') || userMessage.includes('atendente') || userMessage.includes('matheus') || userMessage.includes('whatsapp')) {
+                    return `Perfeito! Vou te conectar com o Matheus, nosso especialista.
+
+📞 *WhatsApp Direto:* (34) 99983-29922
+👉 https://wa.me/5534998329922
+
+⏰ *Horário:* Seg a Sex - 8h às 18h`;
+                }
+                else {
+                    return `Desculpe, não entendi. Posso ajudar com:
+
+📊 Serviços e orçamentos
+💵 Valores e formas de pagamento
+🎁 Promoções ativas
+📞 Conexão com o Matheus
+
+*Prefere falar diretamente com o Matheus?*
+👉 https://wa.me/5534998329922`;
                 }
             }
 
@@ -1413,4 +1618,4 @@
         })();
     </script>
 </body>
-</html>
+        </html>
