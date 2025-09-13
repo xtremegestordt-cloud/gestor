@@ -98,8 +98,21 @@
         .btn-promo { background: var(--promo-gradient); color: white; animation: pulse 2s infinite; }
         .btn-custom:focus { outline: 2px solid white; outline-offset: 2px; }
 
-        .card-custom { border:none; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition: all .4s; height:100%; overflow:hidden; background: var(--card-bg); }
+        .card-custom { 
+            border:none; 
+            border-radius:15px; 
+            box-shadow:0 5px 20px rgba(0,0,0,0.08); 
+            transition: all .4s; 
+            height:100%; 
+            overflow:hidden; 
+            background: var(--card-bg);
+            /* Garantir que o texto seja visível */
+            color: var(--text) !important;
+        }
         .card-custom:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+        .card-custom h3, .card-custom p {
+            color: var(--text) !important;
+        }
         .hero { background: var(--gradient); color:white; padding:110px 0 90px; text-align:center; position:relative; overflow:hidden; }
         .logo { max-width:280px; margin-bottom:20px; transition:all .3s ease; }
         .logo:hover { transform:scale(1.05); }
@@ -110,7 +123,16 @@
         .case-image { border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-bottom:25px; width:100%; height:auto; transition:all .4s ease; }
         .stats-number { font-size:2.4rem; font-weight:800; color:var(--primary); font-family:'Montserrat', sans-serif; }
 
-        .testimonial { background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.08); margin:15px 0; position:relative; }
+        .testimonial { 
+            background:var(--card-bg); 
+            padding:25px; 
+            border-radius:12px; 
+            box-shadow:0 8px 25px rgba(0,0,0,0.08); 
+            margin:15px 0; 
+            position:relative;
+            /* Garantir que o texto seja visível */
+            color: var(--text) !important;
+        }
         .testimonial-client { display: flex; align-items: center; margin-bottom: 15px; }
         .testimonial-client img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 3px solid var(--primary); }
         
@@ -324,6 +346,7 @@
             background: #f1f1f1;
             align-self: flex-start;
             border-bottom-left-radius: 5px;
+            color: #333 !important; /* Garantir que o texto do bot seja visível */
         }
         .user-message {
             background: var(--primary);
@@ -447,6 +470,62 @@
             font-size: 1rem;
             color: var(--text);
             margin-top: 0.5rem;
+        }
+
+        /* CORREÇÕES ESPECÍFICAS */
+        
+        /* 1. Texto visível nos cards de serviço */
+        .card-custom h3 {
+            color: var(--text) !important;
+            font-weight: 700;
+        }
+        
+        .card-custom p {
+            color: var(--text) !important;
+            opacity: 0.9;
+        }
+        
+        /* 2. Texto visível nos modais */
+        .modal-content {
+            color: #333; /* Cor escura padrão para modais */
+        }
+        
+        .modal-body, .modal-body p, .modal-body li, .modal-body h4, .modal-body h5 {
+            color: #333 !important;
+        }
+        
+        /* 3. Ajustes para modo escuro nos modais */
+        .theme-dark .modal-content {
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+        }
+        
+        .theme-dark .modal-body, 
+        .theme-dark .modal-body p, 
+        .theme-dark .modal-body li, 
+        .theme-dark .modal-body h4, 
+        .theme-dark .modal-body h5 {
+            color: #f0f0f0 !important;
+        }
+        
+        /* 4. Ajuste do chatbot para texto visível */
+        .chatbot-container {
+            color: #333;
+        }
+        
+        .theme-dark .chatbot-container {
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+        }
+        
+        .theme-dark .bot-message {
+            background: #3a3a3a;
+            color: #f0f0f0 !important;
+        }
+        
+        .theme-dark .chatbot-input input {
+            background: #3a3a3a;
+            color: #f0f0f0;
         }
 
         /* Responsive tweaks */
@@ -865,12 +944,12 @@
             <div class="gallery-content" id="google-gallery" role="tabpanel" aria-labelledby="google-tab" hidden>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1142&q=80" alt="Google Meu Negócio otimizado Exemplo" loading="lazy">
-                        <div class="gallery-caption">Otimização completa de perfil no Google Meu Negócio para restaurante</div>
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Google Meu Negócio otimizado Exemplo" loading="lazy">
+                        <div class="gallery-caption">Perfil 5 estrelas no Google Meu Negócio para restaurante</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Perfil Google Meu Negócio Exemplo 2" loading="lazy">
-                        <div class="gallery-caption">Fotos e posts para aumentar visibilidade de academia</div>
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Perfil Google Meu Negócio Exemplo 2" loading="lazy">
+                        <div class="gallery-caption">Fotos e reviews para aumentar visibilidade de academia</div>
                     </div>
                 </div>
             </div>
@@ -899,19 +978,19 @@
                     <div class="stats-container">
                         <div class="row text-center">
                             <div class="col-6 stat-item">
-                                <div class="stats-number">R$0,71</div>
-                                <div class="stats-label">Custo por Conversa</div>
+                                <div class="stats-number">R$1,25</div>
+                                <div class="stats-label">Custo por Clique</div>
                             </div>
                             <div class="col-6 stat-item">
-                                <div class="stats-number">55+</div>
-                                <div class="stats-label">Conversas Iniciadas</div>
+                                <div class="stats-number">120+</div>
+                                <div class="stats-label">Leads Gerados</div>
                             </div>
                             <div class="col-6 stat-item">
-                                <div class="stats-number">4.956</div>
+                                <div class="stats-number">15.842</div>
                                 <div class="stats-label">Pessoas Alcançadas</div>
                             </div>
                             <div class="col-6 stat-item">
-                                <div class="stats-number">3,2%</div>
+                                <div class="stats-number">5,8%</div>
                                 <div class="stats-label">Taxa de Conversão</div>
                             </div>
                         </div>
@@ -1126,10 +1205,10 @@
             <h4>Xtreme Gestor de Tráfego</h4>
             <p>Somos especialistas em performance digital, unindo campanhas pagas precisas, criação de websites conversores e otimização do Google Meu Negócio. Trabalhamos com metodologia baseada em dados, testes A/B and foco em ROAS e LTV.</p>
             <h5>Nossa missão</h5>
-            <p>Aumentar resultados reais do cliente através de estratégias transparentes e escaláveis.</p>
+            <p>Aumentar resultados reais do cliente através de estratégias transparentes and escaláveis.</p>
             <h5>Por que escolher a gente</h5>
             <ul>
-                <li>Relatórios transparentes e fáceis de entender.</li>
+                <li>Relatórios transparentes and fáceis de entender.</li>
                 <li>Suporte via WhatsApp and reuniões semanais.</li>
                 <li>Planos escaláveis com orçamento otimizado.</li>
             </ul>
@@ -1661,4 +1740,4 @@ Por onde você gostaria de começar?`;
         })();
     </script>
 </body>
-</html>
+    </html>
